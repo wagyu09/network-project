@@ -2,10 +2,11 @@
 import numpy as np
 import pandas as pd
 
-def corr_calculator(daily_returns, mkt_idx):
+def _calculate_residuals(daily_returns, mkt_idx):
+    """CAPM 기반으로 시장 수익률을 제거한 잔차(residual)를 계산합니다."""
     if isinstance(mkt_idx.columns, pd.MultiIndex):
         mkt_idx.columns = mkt_idx.columns.get_level_values(0)
-    merged = daily_returns.merge(mkt_idx, on='date', how='left')[['ticker','date','Daily_Return','mkt_ret_spx']]
+    merged = daily_returns.merge(mkt_idx, on='date', how='left')[['ticker', 'date', 'Daily_Return', 'mkt_ret_spx']]
 
     Y = merged.pivot(index='date', columns='ticker', values='Daily_Return').dropna(how='all')
     m = (
@@ -13,7 +14,6 @@ def corr_calculator(daily_returns, mkt_idx):
               .set_index('date')['mkt_ret_spx']
               .reindex(Y.index)
       )
-
 
     y = Y.values
     z = m.values.reshape(-1, 1)
@@ -29,23 +29,37 @@ def corr_calculator(daily_returns, mkt_idx):
 
 
     resid_df    = pd.DataFrame(E, index=Y.index, columns=Y.columns)
-    year_month  = resid_df.index.to_period('M')
+    year_quarter = resid_df.index.to_period('Q')
 
-    corr_monthly = (
+    corr_quarterly = (
         resid_df
-          .groupby(year_month)
+          .groupby(year_quarter)
           .apply(lambda df: df.corr())
       )
 
-    corr_monthly = corr_monthly.rename_axis(index=['YearMonth','ticker1'], columns='ticker2')
+    corr_quarterly = corr_quarterly.rename_axis(index=['YearQuarter','ticker1'], columns='ticker2')
 
     corr_data = (
-        corr_monthly
+        corr_quarterly
           .stack(dropna=False)          
           .rename('Correlation')
           .reset_index()
           .query('ticker1 < ticker2')  
-          .set_index(['YearMonth','ticker1','ticker2'])
+          .set_index(['YearQuarter','ticker1','ticker2'])
           .sort_index()
       )
-    return corr_data, resid_df
+    n_tbl = (
+        resid_df.notna().astype(int)
+        .groupby(resid_df.index.to_period('Q'))
+        .apply(lambda m: pd.DataFrame(m.T @ m, index=m.columns, columns=m.columns))
+        .rename_axis(index=['YearQuarter', 'ticker1'], columns='ticker2')
+        .stack()
+        .rename('n')
+        .reset_index()
+        .query('ticker1 < ticker2')
+        .set_index(['YearQuarter', 'ticker1', 'ticker2'])
+    )
+
+    corr_stats = corr_data.join(n_tbl, how='inner').dropna(subset=['Correlation', 'n'])
+
+    return corr_stats
