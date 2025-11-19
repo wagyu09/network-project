@@ -1,0 +1,23 @@
+{
+    "min_centrality_portfolio": [
+        "NUE",
+        "ERIE",
+        "FIS",
+        "BIIB",
+        "ORCL"
+    ],
+    "max_centrality_portfolio": [
+        "BRK-B",
+        "SNPS",
+        "L",
+        "ATO",
+        "ITW"
+    ],
+    "random_portfolio": [
+        "EMR",
+        "IVZ",
+        "MCK",
+        "COF",
+        "NKE"
+    ]
+}

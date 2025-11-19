@@ -1,0 +1,35 @@
+{
+    "min_centrality_portfolio": [
+        "EOG",
+        "GRMN",
+        "KDP",
+        "VST",
+        "DVA",
+        "DLTR",
+        "FAST",
+        "WAB",
+        "NKE"
+    ],
+    "max_centrality_portfolio": [
+        "XOM",
+        "MA",
+        "KDP",
+        "VST",
+        "MCK",
+        "MDLZ",
+        "BEN",
+        "CAT",
+        "GPC"
+    ],
+    "random_portfolio": [
+        "HAS",
+        "CMCSA",
+        "ORCL",
+        "UDR",
+        "ODFL",
+        "NCLH",
+        "ZBRA",
+        "CMS",
+        "ZBH"
+    ]
+}

@@ -3,45 +3,58 @@ import pandas as pd
 import requests
 import random
 
+import yfinance as yf
+import pandas as pd
+import requests
+import random
+import io
+
+def fetch_sp500_tickers(num_stocks: int = 300):
+    """S&P 500 종목 티커와 섹터 정보를 Wikipedia에서 가져옵니다."""
+    wiki = "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies"
+    req = requests.get(wiki, headers={"User-Agent": "Mozilla/5.0"})
+    # 'attrs'를 사용하여 id가 'constituents'인 테이블을 명시적으로 선택
+    tables = pd.read_html(io.StringIO(req.text), attrs={'id': 'constituents'})
+    sp500 = tables[0]
+    sp500["ticker"] = sp500["Symbol"].astype(str).str.replace(".", "-", regex=False)
+    
+    all_tickers = sp500["ticker"].unique().tolist()
+    
+    # 300개 종목 랜덤 샘플링
+    if len(all_tickers) > num_stocks:
+        random.seed(42) # 재현성을 위한 시드 설정
+        tickers = random.sample(all_tickers, num_stocks)
+    else:
+        tickers = all_tickers
+        
+    sectors = sp500[sp500['ticker'].isin(tickers)][["ticker", "GICS Sector"]]
+    
+    return sectors, tickers
+
+
+def load_raw_stock_data(tickers, start_date, end_date):
+    """지정된 종목과 기간에 대한 원시 주가 데이터를 yfinance에서 로드합니다."""
+    raw = yf.download(
+        tickers=tickers,
+        start=start_date,
+        end=end_date,
+        interval="1d",
+        auto_adjust=False,
+        group_by="ticker",
+        progress=False,
+    )
+    return raw
+
 class DataLoader:
     def __init__(self, start_date : str, end_date : str, num_stocks: int = 300):
         self.start_date = start_date
         self.end_date = end_date
         self.num_stocks = num_stocks
-        self.sectors, self.tickers = self._fetch_sp500_tickers()
-
-    def _fetch_sp500_tickers(self):
-        """S&P 500 종목 티커와 섹터 정보를 Wikipedia에서 가져옵니다."""
-        wiki = "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies"
-        req = requests.get(wiki, headers={"User-Agent": "Mozilla/5.0"})
-        tables = pd.read_html(req.text)
-        sp500 = tables[1]
-        sp500["ticker"] = sp500["Symbol"].astype(str).str.replace(".", "-", regex=False)
-        
-        all_tickers = sp500["ticker"].unique().tolist()
-        
-        # 300개 종목 랜덤 샘플링
-        if len(all_tickers) > self.num_stocks:
-            random.seed(42) # 재현성을 위한 시드 설정
-            tickers = random.sample(all_tickers, self.num_stocks)
-        else:
-            tickers = all_tickers
-            
-        sectors = sp500[sp500['ticker'].isin(tickers)][["ticker", "GICS Sector"]]
-        
-        return sectors, tickers
+        self.sectors, self.tickers = fetch_sp500_tickers(num_stocks)
 
     def load_stock_data(self):
-        """S&P 500 종목들의 일별 주가 데이터를 yfinance에서 로드합니다."""
-        raw = yf.download(
-            tickers=self.tickers,
-            start=self.start_date,
-            end=self.end_date,
-            interval="1d",
-            auto_adjust=False,
-            group_by="ticker",
-            progress=False,
-        )
+        """S&P 500 종목들의 일별 주가 데이터를 yfinance에서 로드하고 포맷을 변환합니다."""
+        raw = load_raw_stock_data(self.tickers, self.start_date, self.end_date)
         data = (
             raw.stack(0)
             .rename_axis(["date", "ticker"])

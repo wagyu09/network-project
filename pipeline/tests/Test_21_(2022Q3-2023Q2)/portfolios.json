@@ -1,0 +1,20 @@
+{
+    "min_centrality_portfolio": [
+        "KEYS",
+        "DLTR",
+        "BIIB",
+        "ORCL"
+    ],
+    "max_centrality_portfolio": [
+        "GOOGL",
+        "JCI",
+        "LDOS",
+        "L"
+    ],
+    "random_portfolio": [
+        "KHC",
+        "KLAC",
+        "STE",
+        "KMB"
+    ]
+}

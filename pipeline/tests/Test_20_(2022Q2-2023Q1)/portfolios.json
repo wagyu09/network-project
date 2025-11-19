@@ -1,0 +1,20 @@
+{
+    "min_centrality_portfolio": [
+        "NEM",
+        "V",
+        "BIIB",
+        "SW"
+    ],
+    "max_centrality_portfolio": [
+        "DE",
+        "PYPL",
+        "CL",
+        "L"
+    ],
+    "random_portfolio": [
+        "WYNN",
+        "MTCH",
+        "DD",
+        "KO"
+    ]
+}

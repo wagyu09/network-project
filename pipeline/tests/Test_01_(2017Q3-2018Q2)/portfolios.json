@@ -1,0 +1,32 @@
+{
+    "min_centrality_portfolio": [
+        "VST",
+        "RCL",
+        "JBL",
+        "HPQ",
+        "ORCL",
+        "NVR",
+        "DVA",
+        "CPRT"
+    ],
+    "max_centrality_portfolio": [
+        "O",
+        "CVX",
+        "MA",
+        "HPQ",
+        "ORCL",
+        "BAC",
+        "WBD",
+        "ORLY"
+    ],
+    "random_portfolio": [
+        "VLO",
+        "VST",
+        "AWK",
+        "MOS",
+        "MNST",
+        "VTR",
+        "TDG",
+        "ROST"
+    ]
+}

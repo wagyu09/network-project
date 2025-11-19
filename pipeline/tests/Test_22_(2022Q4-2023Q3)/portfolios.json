@@ -1,0 +1,20 @@
+{
+    "min_centrality_portfolio": [
+        "AKAM",
+        "SW",
+        "MRNA",
+        "FSLR"
+    ],
+    "max_centrality_portfolio": [
+        "MSFT",
+        "SPG",
+        "SJM",
+        "WAB"
+    ],
+    "random_portfolio": [
+        "KDP",
+        "MTCH",
+        "CFG",
+        "LW"
+    ]
+}

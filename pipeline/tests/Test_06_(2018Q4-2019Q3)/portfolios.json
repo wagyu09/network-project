@@ -1,0 +1,26 @@
+{
+    "min_centrality_portfolio": [
+        "ORCL",
+        "AZO",
+        "HPQ",
+        "SW",
+        "MNST",
+        "FSLR"
+    ],
+    "max_centrality_portfolio": [
+        "GOOGL",
+        "WYNN",
+        "HPQ",
+        "PH",
+        "XEL",
+        "HAL"
+    ],
+    "random_portfolio": [
+        "URI",
+        "STZ",
+        "UNH",
+        "ZBH",
+        "NCLH",
+        "CAG"
+    ]
+}

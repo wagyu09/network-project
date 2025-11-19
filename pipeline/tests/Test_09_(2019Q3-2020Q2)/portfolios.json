@@ -1,0 +1,20 @@
+{
+    "min_centrality_portfolio": [
+        "MNST",
+        "EL",
+        "ANET",
+        "GRMN"
+    ],
+    "max_centrality_portfolio": [
+        "ED",
+        "ADBE",
+        "TROW",
+        "DRI"
+    ],
+    "random_portfolio": [
+        "ZBH",
+        "EOG",
+        "EXPD",
+        "TROW"
+    ]
+}

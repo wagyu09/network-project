@@ -1,0 +1,23 @@
+{
+    "min_centrality_portfolio": [
+        "MDT",
+        "BIIB",
+        "UPS",
+        "TDY",
+        "ORCL"
+    ],
+    "max_centrality_portfolio": [
+        "ZBH",
+        "AWK",
+        "L",
+        "MPC",
+        "ADBE"
+    ],
+    "random_portfolio": [
+        "KDP",
+        "KLAC",
+        "FIS",
+        "ORCL",
+        "LW"
+    ]
+}

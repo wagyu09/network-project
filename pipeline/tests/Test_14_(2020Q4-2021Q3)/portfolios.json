@@ -1,0 +1,23 @@
+{
+    "min_centrality_portfolio": [
+        "NKE",
+        "NEM",
+        "SW",
+        "VTRS",
+        "EL"
+    ],
+    "max_centrality_portfolio": [
+        "SNPS",
+        "GPC",
+        "SW",
+        "PFG",
+        "CAH"
+    ],
+    "random_portfolio": [
+        "MNST",
+        "AOS",
+        "ZBH",
+        "WYNN",
+        "IVZ"
+    ]
+}

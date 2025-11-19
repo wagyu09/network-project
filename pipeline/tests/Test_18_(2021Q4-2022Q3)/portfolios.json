@@ -1,0 +1,23 @@
+{
+    "min_centrality_portfolio": [
+        "BIIB",
+        "EBAY",
+        "VST",
+        "ORCL",
+        "HPQ"
+    ],
+    "max_centrality_portfolio": [
+        "ATO",
+        "SNPS",
+        "BRK-B",
+        "EXPD",
+        "L"
+    ],
+    "random_portfolio": [
+        "UPS",
+        "BRK-B",
+        "MCK",
+        "HPQ",
+        "ALLE"
+    ]
+}

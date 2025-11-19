@@ -1,0 +1,26 @@
+{
+    "min_centrality_portfolio": [
+        "AKAM",
+        "DPZ",
+        "SW",
+        "ADM",
+        "TTWO",
+        "AZO"
+    ],
+    "max_centrality_portfolio": [
+        "WY",
+        "WEC",
+        "MSFT",
+        "KMI",
+        "BEN",
+        "MMC"
+    ],
+    "random_portfolio": [
+        "EMR",
+        "BRK-B",
+        "DPZ",
+        "COIN",
+        "LW",
+        "YUM"
+    ]
+}

@@ -56,7 +56,7 @@ def visualize_network(G: nx.Graph, partition: dict, output_filename: str = 'netw
     edge_widths = []
     for u, v, data in G.edges(data=True):
         corr = data.get('Correlation', 0)
-        edge_colors.append('blue' if corr > 0 else 'red')
+        edge_colors.append('lightblue' if corr > 0 else 'lightcoral')
         edge_widths.append(abs(corr) * 2) # 상관관계 절댓값에 비례하는 엣지 두께
 
     # 노드 크기를 디그리(연결 수)에 비례하도록 설정
@@ -68,7 +68,7 @@ def visualize_network(G: nx.Graph, partition: dict, output_filename: str = 'netw
     # 노드, 엣지, 라벨 그리기
     nx.draw_networkx_edges(G, pos, alpha=0.5, edge_color=edge_colors, width=edge_widths)
     nx.draw_networkx_nodes(G, pos, node_color=colors, node_size=node_sizes)
-    nx.draw_networkx_labels(G, pos, font_size=6, font_family='Malgun Gothic') # Windows
+    nx.draw_networkx_labels(G, pos, font_size=6, font_family='DejaVu Sans') # Use a widely available font
     # nx.draw_networkx_labels(G, pos, font_size=6, font_family='AppleGothic') # macOS
 
     num_communities = len(set(partition.values()))

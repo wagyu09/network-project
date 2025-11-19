@@ -1,0 +1,26 @@
+{
+    "min_centrality_portfolio": [
+        "DRI",
+        "VST",
+        "PCG",
+        "CPRT",
+        "DPZ",
+        "FSLR"
+    ],
+    "max_centrality_portfolio": [
+        "CAH",
+        "VST",
+        "CMS",
+        "MA",
+        "DPZ",
+        "EMR"
+    ],
+    "random_portfolio": [
+        "BXP",
+        "CTAS",
+        "T",
+        "MDT",
+        "IDXX",
+        "TSN"
+    ]
+}

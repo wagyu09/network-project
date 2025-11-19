@@ -1,0 +1,26 @@
+{
+    "min_centrality_portfolio": [
+        "EL",
+        "IFF",
+        "BIIB",
+        "SW",
+        "NVR",
+        "NKE"
+    ],
+    "max_centrality_portfolio": [
+        "NOC",
+        "L",
+        "BIIB",
+        "SW",
+        "GPC",
+        "ADBE"
+    ],
+    "random_portfolio": [
+        "MNST",
+        "TXT",
+        "CMCSA",
+        "UPS",
+        "IVZ",
+        "LDOS"
+    ]
+}

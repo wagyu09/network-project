@@ -1,0 +1,38 @@
+{
+    "min_centrality_portfolio": [
+        "AKAM",
+        "NKE",
+        "DPZ",
+        "CPRT",
+        "CI",
+        "ADM",
+        "DVA",
+        "VST",
+        "GRMN",
+        "ORCL"
+    ],
+    "max_centrality_portfolio": [
+        "MA",
+        "GPC",
+        "XYL",
+        "CPRT",
+        "BAC",
+        "O",
+        "WBD",
+        "VST",
+        "STLD",
+        "ORCL"
+    ],
+    "random_portfolio": [
+        "PNW",
+        "ZTS",
+        "MOS",
+        "CAG",
+        "COO",
+        "HPQ",
+        "MDT",
+        "ANET",
+        "MA",
+        "TER"
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "min_centrality_portfolio": [
+        "DLTR",
+        "LW",
+        "TTWO",
+        "ADBE",
+        "WDAY"
+    ],
+    "max_centrality_portfolio": [
+        "ITW",
+        "KIM",
+        "ANET",
+        "ADBE",
+        "L"
+    ],
+    "random_portfolio": [
+        "CARR",
+        "DAL",
+        "MCHP",
+        "ORCL",
+        "KMB"
+    ]
+}

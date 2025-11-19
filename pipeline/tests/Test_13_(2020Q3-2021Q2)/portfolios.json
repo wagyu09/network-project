@@ -1,0 +1,23 @@
+{
+    "min_centrality_portfolio": [
+        "SW",
+        "WTW",
+        "IBKR",
+        "FE",
+        "EL"
+    ],
+    "max_centrality_portfolio": [
+        "ADBE",
+        "EIX",
+        "PRU",
+        "FE",
+        "OMC"
+    ],
+    "random_portfolio": [
+        "AMT",
+        "IDXX",
+        "EME",
+        "JCI",
+        "NUE"
+    ]
+}
