@@ -1,0 +1,16 @@
+{
+    "min_centrality_portfolio": [
+        "BIIB",
+        "WDC",
+        "TSLA",
+        "ADBE",
+        "GLW"
+    ],
+    "max_centrality_portfolio": [
+        "WEC",
+        "LRCX",
+        "TSLA",
+        "AMP",
+        "META"
+    ]
+}

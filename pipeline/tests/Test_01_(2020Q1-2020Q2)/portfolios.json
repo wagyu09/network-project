@@ -1,0 +1,16 @@
+{
+    "min_centrality_portfolio": [
+        "IBM",
+        "CSGP",
+        "SNPS",
+        "INCY",
+        "GEN"
+    ],
+    "max_centrality_portfolio": [
+        "LLY",
+        "SYK",
+        "HCA",
+        "ROST",
+        "GEN"
+    ]
+}

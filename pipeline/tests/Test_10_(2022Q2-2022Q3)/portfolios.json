@@ -1,0 +1,26 @@
+{
+    "min_centrality_portfolio": [
+        "INCY",
+        "FIS",
+        "JBHT",
+        "SW",
+        "YUM",
+        "BLK",
+        "EA",
+        "ROST",
+        "SYY",
+        "GEN"
+    ],
+    "max_centrality_portfolio": [
+        "BAX",
+        "CRWD",
+        "CL",
+        "ATO",
+        "YUM",
+        "ITW",
+        "BRK-B",
+        "WRB",
+        "SYY",
+        "GEN"
+    ]
+}

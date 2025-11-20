@@ -2,38 +2,47 @@ import yfinance as yf
 import pandas as pd
 import requests
 import random
-
-import yfinance as yf
-import pandas as pd
-import requests
-import random
 import io
+import os
+import hashlib
 
-def fetch_sp500_tickers(num_stocks: int = 300):
+def fetch_sp500_tickers(num_stocks: int = 500):
     """S&P 500 종목 티커와 섹터 정보를 Wikipedia에서 가져옵니다."""
     wiki = "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies"
     req = requests.get(wiki, headers={"User-Agent": "Mozilla/5.0"})
-    # 'attrs'를 사용하여 id가 'constituents'인 테이블을 명시적으로 선택
     tables = pd.read_html(io.StringIO(req.text), attrs={'id': 'constituents'})
     sp500 = tables[0]
     sp500["ticker"] = sp500["Symbol"].astype(str).str.replace(".", "-", regex=False)
     
     all_tickers = sp500["ticker"].unique().tolist()
     
-    # 300개 종목 랜덤 샘플링
-    if len(all_tickers) > num_stocks:
-        random.seed(42) # 재현성을 위한 시드 설정
-        tickers = random.sample(all_tickers, num_stocks)
-    else:
-        tickers = all_tickers
-        
-    sectors = sp500[sp500['ticker'].isin(tickers)][["ticker", "GICS Sector"]]
+    sectors = sp500[["ticker", "GICS Sector"]]
     
-    return sectors, tickers
-
+    return sectors, all_tickers
 
 def load_raw_stock_data(tickers, start_date, end_date):
-    """지정된 종목과 기간에 대한 원시 주가 데이터를 yfinance에서 로드합니다."""
+    """지정된 종목과 기간에 대한 원시 주가 데이터를 yfinance에서 로드하거나 캐시에서 불러옵니다."""
+    CACHE_DIR = '.cache'
+    os.makedirs(CACHE_DIR, exist_ok=True)
+    
+    tickers_str = "".join(sorted(tickers))
+    filename_hash = hashlib.md5(f"{tickers_str}_{start_date}_{end_date}".encode()).hexdigest()
+    cache_file = os.path.join(CACHE_DIR, f"{filename_hash}.csv")
+
+    try:
+        if os.path.exists(cache_file):
+            print(f"Loading data from cache: {cache_file}")
+            cached_data = pd.read_csv(cache_file, header=[0, 1], index_col=0, parse_dates=True)
+            # Ensure the columns are in the same order as the requested tickers
+            # This can be an issue if the cached file has a different ticker order
+            level_1_cols = cached_data.columns.get_level_values(1)
+            if not level_1_cols.empty:
+                 cached_data = cached_data.reindex(columns=tickers, level=0)
+            return cached_data
+    except Exception as e:
+        print(f"Could not read cache file {cache_file}, re-downloading. Error: {e}")
+
+    print(f"Downloading data for {len(tickers)} tickers from {start_date} to {end_date}")
     raw = yf.download(
         tickers=tickers,
         start=start_date,
@@ -43,69 +52,30 @@ def load_raw_stock_data(tickers, start_date, end_date):
         group_by="ticker",
         progress=False,
     )
+
+    if not raw.empty:
+        try:
+            raw.to_csv(cache_file)
+            print(f"Data cached to {cache_file}")
+        except Exception as e:
+            print(f"Failed to cache data to {cache_file}. Error: {e}")
+            
     return raw
 
-class DataLoader:
-    def __init__(self, start_date : str, end_date : str, num_stocks: int = 300):
-        self.start_date = start_date
-        self.end_date = end_date
-        self.num_stocks = num_stocks
-        self.sectors, self.tickers = fetch_sp500_tickers(num_stocks)
-
-    def load_stock_data(self):
-        """S&P 500 종목들의 일별 주가 데이터를 yfinance에서 로드하고 포맷을 변환합니다."""
-        raw = load_raw_stock_data(self.tickers, self.start_date, self.end_date)
-        data = (
-            raw.stack(0)
-            .rename_axis(["date", "ticker"])
-            .reset_index()[["ticker", "date", "Close", "Volume"]]
-            .sort_values(["ticker", "date"])
-            .reset_index(drop=True)
-            .merge(self.sectors, on="ticker", how="left")
-        )
-        return data
-
-    def calculate_returns(self, data):
-        """주가 데이터로부터 일별 수익률과 월별 통계를 계산합니다."""
-        daily = data.copy()
-        daily["Daily_Return"] = daily.groupby("ticker")["Close"].pct_change()
-        daily = daily.dropna(subset=["Daily_Return"])
-        daily["YearMonth"] = daily["date"].dt.to_period("M")
-
-        monthly = (
-            daily.groupby(["ticker", "YearMonth"])["Daily_Return"]
-            .agg(
-                Monthly_Mean_Return="mean",
-                Monthly_Variance="var",
-                Monthly_Std_Dev="std",
-            )
-            .reset_index()
-        )
-
-        return daily, monthly
-
-    def load_market_data(self):
-        """S&P 500 시장 지수 데이터를 로드하고 수익률을 계산합니다."""
-        mkt_idx = yf.download(
-            "^GSPC",
-            start=self.start_date,
-            end=self.end_date,
-            interval="1d",
-            auto_adjust=False,
-            progress=False,
-        )
-        mkt_idx = (
-            mkt_idx.reset_index()[["Date", "Close"]]
-            .rename(columns={"Date": "date", "Close": "SPX"})
-            .sort_values("date")
-        )
-        mkt_idx["mkt_ret_spx"] = mkt_idx["SPX"].pct_change()
-
-        return mkt_idx
-
-    def load_data(self):
-        """데이터 로딩 및 전처리 파이프라인을 실행합니다."""
-        stock_data = self.load_stock_data()
-        daily, monthly = self.calculate_returns(stock_data)
-        mkt_idx = self.load_market_data()
-        return daily, monthly, mkt_idx
+def load_market_data(start_date, end_date):
+    """S&P 500 시장 지수 데이터를 로드하고 수익률을 계산합니다."""
+    mkt_idx = yf.download(
+        "^GSPC",
+        start=start_date,
+        end=end_date,
+        interval="1d",
+        auto_adjust=False,
+        progress=False,
+    )
+    mkt_idx = (
+        mkt_idx.reset_index()[["Date", "Close"]]
+        .rename(columns={"Date": "date", "Close": "SPX"})
+        .sort_values("date")
+    )
+    mkt_idx["mkt_ret_spx"] = mkt_idx["SPX"].pct_change()
+    return mkt_idx

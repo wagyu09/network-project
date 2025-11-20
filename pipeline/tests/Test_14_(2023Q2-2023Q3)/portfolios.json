@@ -1,0 +1,20 @@
+{
+    "min_centrality_portfolio": [
+        "EA",
+        "AXON",
+        "BIIB",
+        "SW",
+        "PYPL",
+        "STE",
+        "STZ"
+    ],
+    "max_centrality_portfolio": [
+        "GOOG",
+        "DOV",
+        "FRT",
+        "SW",
+        "MRK",
+        "STE",
+        "PFG"
+    ]
+}

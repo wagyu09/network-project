@@ -1,0 +1,22 @@
+{
+    "min_centrality_portfolio": [
+        "ZBH",
+        "SW",
+        "BX",
+        "GD",
+        "WMB",
+        "RMD",
+        "LULU",
+        "ISRG"
+    ],
+    "max_centrality_portfolio": [
+        "TROW",
+        "WEC",
+        "AMP",
+        "LDOS",
+        "FANG",
+        "GOOG",
+        "LULU",
+        "ISRG"
+    ]
+}

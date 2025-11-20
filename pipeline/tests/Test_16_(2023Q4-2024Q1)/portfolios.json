@@ -1,0 +1,22 @@
+{
+    "min_centrality_portfolio": [
+        "SW",
+        "BF-B",
+        "FTNT",
+        "TSLA",
+        "HOLX",
+        "CVS",
+        "DELL",
+        "LULU"
+    ],
+    "max_centrality_portfolio": [
+        "PLD",
+        "AWK",
+        "FTNT",
+        "IEX",
+        "HCA",
+        "FOX",
+        "DELL",
+        "AJG"
+    ]
+}

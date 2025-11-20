@@ -1,0 +1,26 @@
+{
+    "min_centrality_portfolio": [
+        "DGX",
+        "SW",
+        "IBKR",
+        "INTC",
+        "DELL",
+        "COO",
+        "UBER",
+        "CPRT",
+        "CSCO",
+        "GEN"
+    ],
+    "max_centrality_portfolio": [
+        "ADBE",
+        "SW",
+        "IBKR",
+        "SRE",
+        "ETN",
+        "MDT",
+        "UBER",
+        "GD",
+        "CSCO",
+        "GEN"
+    ]
+}

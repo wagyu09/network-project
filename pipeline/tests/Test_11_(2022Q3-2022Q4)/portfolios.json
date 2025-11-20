@@ -1,0 +1,22 @@
+{
+    "min_centrality_portfolio": [
+        "BIIB",
+        "IBM",
+        "LVS",
+        "NEM",
+        "CPAY",
+        "TTWO",
+        "TSLA",
+        "RTX"
+    ],
+    "max_centrality_portfolio": [
+        "MAA",
+        "CCI",
+        "COF",
+        "MHK",
+        "MRK",
+        "XYZ",
+        "TSLA",
+        "COP"
+    ]
+}

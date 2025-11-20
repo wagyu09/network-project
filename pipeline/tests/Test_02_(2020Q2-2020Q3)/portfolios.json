@@ -1,0 +1,18 @@
+{
+    "min_centrality_portfolio": [
+        "LULU",
+        "ORCL",
+        "ANET",
+        "WAT",
+        "AXON",
+        "DELL"
+    ],
+    "max_centrality_portfolio": [
+        "CHD",
+        "ORCL",
+        "ANET",
+        "EA",
+        "KEY",
+        "DOV"
+    ]
+}

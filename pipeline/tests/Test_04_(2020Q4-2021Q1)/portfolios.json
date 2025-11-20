@@ -1,0 +1,16 @@
+{
+    "min_centrality_portfolio": [
+        "NKE",
+        "VTRS",
+        "DELL",
+        "BLK",
+        "INTC"
+    ],
+    "max_centrality_portfolio": [
+        "ADBE",
+        "NTRS",
+        "HON",
+        "EVRG",
+        "INTC"
+    ]
+}

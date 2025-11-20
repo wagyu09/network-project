@@ -1,0 +1,26 @@
+{
+    "min_centrality_portfolio": [
+        "GRMN",
+        "BX",
+        "MKC",
+        "ROST",
+        "TSLA",
+        "VST",
+        "IBM",
+        "GEN",
+        "FOX",
+        "CSX"
+    ],
+    "max_centrality_portfolio": [
+        "A",
+        "MET",
+        "PEP",
+        "AON",
+        "TSLA",
+        "VST",
+        "PH",
+        "CPT",
+        "WBD",
+        "LRCX"
+    ]
+}

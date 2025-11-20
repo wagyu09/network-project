@@ -1,0 +1,22 @@
+{
+    "min_centrality_portfolio": [
+        "BLK",
+        "MRK",
+        "MSI",
+        "JBHT",
+        "HCA",
+        "AZO",
+        "SW",
+        "BIIB"
+    ],
+    "max_centrality_portfolio": [
+        "FTNT",
+        "MRK",
+        "CAG",
+        "KEY",
+        "SYY",
+        "LDOS",
+        "SW",
+        "BIIB"
+    ]
+}

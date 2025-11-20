@@ -1,4 +1,3 @@
-Portfolio,Avg. Return,Avg. Volatility,Avg. Sharpe Ratio,Avg. Max Drawdown,Volatility Wins,Sharpe Ratio Wins,MDD Wins
-최소 중심성 포트폴리오,0.0327,0.2142,0.0574,-0.1043,9,10,9
-최대 중심성 포트폴리오,0.0360,0.1940,0.0560,-0.0887,11,6,14
-랜덤 포트폴리오,0.0498,0.2184,0.0668,-0.1002,10,14,7
+Portfolio,Return,Volatility,Sharpe Ratio,Max Drawdown,Random Mean Return,Random Mean Volatility,Random Mean Sharpe,Random Mean MDD,p-value (Return),p-value (Volatility),p-value (Sharpe),p-value (MDD)
+max_centrality,0.0430,0.2036,0.0677,-0.0914,0.0508,0.1984,0.0648,-0.0877,0.5364,0.5248,0.5157,0.4975
+min_centrality,0.0435,0.2009,0.0609,-0.0927,0.0508,0.1984,0.0648,-0.0877,0.5384,0.5451,0.5149,0.5619

@@ -1,0 +1,24 @@
+{
+    "min_centrality_portfolio": [
+        "LLY",
+        "UPS",
+        "DELL",
+        "ABBV",
+        "CTAS",
+        "INCY",
+        "VTRS",
+        "APO",
+        "STE"
+    ],
+    "max_centrality_portfolio": [
+        "ADBE",
+        "WRB",
+        "KEY",
+        "UDR",
+        "CTAS",
+        "INCY",
+        "VTRS",
+        "APO",
+        "STE"
+    ]
+}

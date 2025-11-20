@@ -1,0 +1,24 @@
+{
+    "min_centrality_portfolio": [
+        "EA",
+        "META",
+        "UBER",
+        "SRE",
+        "STLD",
+        "GOOG",
+        "FICO",
+        "CVS",
+        "TSLA"
+    ],
+    "max_centrality_portfolio": [
+        "ITW",
+        "META",
+        "PEP",
+        "MET",
+        "VST",
+        "GOOG",
+        "FICO",
+        "GILD",
+        "TSLA"
+    ]
+}

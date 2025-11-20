@@ -1,0 +1,18 @@
+{
+    "min_centrality_portfolio": [
+        "BIIB",
+        "NDSN",
+        "BX",
+        "NEM",
+        "INCY",
+        "DELL"
+    ],
+    "max_centrality_portfolio": [
+        "ZTS",
+        "BRK-B",
+        "MCHP",
+        "NEM",
+        "CLX",
+        "FITB"
+    ]
+}

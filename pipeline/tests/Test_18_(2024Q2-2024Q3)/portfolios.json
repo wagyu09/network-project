@@ -1,0 +1,24 @@
+{
+    "min_centrality_portfolio": [
+        "SW",
+        "TTWO",
+        "INCY",
+        "CCL",
+        "BALL",
+        "UNH",
+        "ERIE",
+        "TSLA",
+        "ZTS"
+    ],
+    "max_centrality_portfolio": [
+        "SW",
+        "TTWO",
+        "CRWD",
+        "AJG",
+        "GOOG",
+        "ETR",
+        "MET",
+        "ITW",
+        "ALLE"
+    ]
+}

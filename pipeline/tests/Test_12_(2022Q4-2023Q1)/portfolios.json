@@ -1,0 +1,24 @@
+{
+    "min_centrality_portfolio": [
+        "HCA",
+        "COST",
+        "CPRT",
+        "BF-B",
+        "PAYX",
+        "ALB",
+        "AXON",
+        "AVY",
+        "NRG"
+    ],
+    "max_centrality_portfolio": [
+        "MHK",
+        "DDOG",
+        "TT",
+        "XEL",
+        "GWW",
+        "OXY",
+        "GEN",
+        "GOOGL",
+        "MET"
+    ]
+}

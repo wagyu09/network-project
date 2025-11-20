@@ -1,0 +1,22 @@
+{
+    "min_centrality_portfolio": [
+        "DG",
+        "ADBE",
+        "NKE",
+        "INTC",
+        "GOOG",
+        "TSLA",
+        "CRWD",
+        "FTNT"
+    ],
+    "max_centrality_portfolio": [
+        "GPC",
+        "LNT",
+        "LRCX",
+        "CPAY",
+        "GOOG",
+        "TSLA",
+        "CRWD",
+        "AXON"
+    ]
+}

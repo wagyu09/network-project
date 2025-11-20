@@ -1,0 +1,22 @@
+{
+    "min_centrality_portfolio": [
+        "ZBH",
+        "INCY",
+        "ORCL",
+        "JBHT",
+        "TSLA",
+        "ERIE",
+        "BIIB",
+        "TDY"
+    ],
+    "max_centrality_portfolio": [
+        "MET",
+        "AWK",
+        "ORCL",
+        "ETN",
+        "TSLA",
+        "ERIE",
+        "IDXX",
+        "BRK-B"
+    ]
+}
