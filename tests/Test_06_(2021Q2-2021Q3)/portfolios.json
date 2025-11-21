@@ -1,0 +1,28 @@
+{
+    "min_centrality_portfolio": [
+        "KVUE",
+        "NKE",
+        "CMCSA",
+        "RMD",
+        "FOX",
+        "SW",
+        "STE",
+        "VLTO",
+        "CEG",
+        "DLTR",
+        "DPZ"
+    ],
+    "max_centrality_portfolio": [
+        "KVUE",
+        "AFL",
+        "TRV",
+        "PYPL",
+        "HST",
+        "SW",
+        "VZ",
+        "VLTO",
+        "CEG",
+        "DLTR",
+        "DPZ"
+    ]
+}

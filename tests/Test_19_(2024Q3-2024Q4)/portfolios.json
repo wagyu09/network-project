@@ -1,0 +1,18 @@
+{
+    "min_centrality_portfolio": [
+        "PODD",
+        "AAPL",
+        "K",
+        "LYV",
+        "TSLA",
+        "INTU"
+    ],
+    "max_centrality_portfolio": [
+        "SNA",
+        "AAPL",
+        "AMAT",
+        "L",
+        "TSLA",
+        "LNT"
+    ]
+}

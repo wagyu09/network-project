@@ -1,0 +1,9 @@
+pandas
+numpy
+yfinance
+requests
+lxml
+networkx
+python-louvain
+matplotlib
+scipy

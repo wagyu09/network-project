@@ -1,0 +1,18 @@
+{
+    "min_centrality_portfolio": [
+        "APH",
+        "CEG",
+        "ADBE",
+        "BG",
+        "APD",
+        "NVDA"
+    ],
+    "max_centrality_portfolio": [
+        "IFF",
+        "WEC",
+        "AMP",
+        "KMI",
+        "ETR",
+        "NVDA"
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "min_centrality_portfolio": [
+        "DLTR",
+        "KVUE",
+        "TSLA",
+        "MRNA",
+        "VLTO",
+        "CRM",
+        "FDS",
+        "SW",
+        "IBM"
+    ],
+    "max_centrality_portfolio": [
+        "JCI",
+        "KVUE",
+        "TSLA",
+        "PEP",
+        "VLTO",
+        "DD",
+        "AON",
+        "LRCX",
+        "MET"
+    ]
+}

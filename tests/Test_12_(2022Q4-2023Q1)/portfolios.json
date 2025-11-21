@@ -1,0 +1,24 @@
+{
+    "min_centrality_portfolio": [
+        "VLTO",
+        "MRNA",
+        "DPZ",
+        "CHTR",
+        "DGX",
+        "KVUE",
+        "PAYX",
+        "AKAM",
+        "BBY"
+    ],
+    "max_centrality_portfolio": [
+        "VLTO",
+        "MHK",
+        "XEL",
+        "MET",
+        "IBM",
+        "KVUE",
+        "GWW",
+        "QCOM",
+        "OXY"
+    ]
+}

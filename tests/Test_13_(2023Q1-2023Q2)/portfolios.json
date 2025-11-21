@@ -1,0 +1,22 @@
+{
+    "min_centrality_portfolio": [
+        "INCY",
+        "ZBH",
+        "UNP",
+        "KVUE",
+        "DXCM",
+        "LULU",
+        "VLTO",
+        "JBL"
+    ],
+    "max_centrality_portfolio": [
+        "GL",
+        "IQV",
+        "MSFT",
+        "KVUE",
+        "WEC",
+        "LULU",
+        "VLTO",
+        "SLB"
+    ]
+}

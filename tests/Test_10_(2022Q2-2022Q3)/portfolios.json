@@ -1,0 +1,26 @@
+{
+    "min_centrality_portfolio": [
+        "INCY",
+        "GEN",
+        "KVUE",
+        "TMUS",
+        "HPQ",
+        "VLTO",
+        "BLK",
+        "SCHW",
+        "TDY",
+        "SYY"
+    ],
+    "max_centrality_portfolio": [
+        "FDS",
+        "GEN",
+        "KVUE",
+        "ATO",
+        "NVDA",
+        "VLTO",
+        "ITW",
+        "AFL",
+        "WMB",
+        "CL"
+    ]
+}

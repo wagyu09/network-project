@@ -1,0 +1,18 @@
+{
+    "min_centrality_portfolio": [
+        "EA",
+        "EIX",
+        "FICO",
+        "MRNA",
+        "ALGN",
+        "TSLA"
+    ],
+    "max_centrality_portfolio": [
+        "ITW",
+        "CL",
+        "NVDA",
+        "MRNA",
+        "AFL",
+        "TSLA"
+    ]
+}

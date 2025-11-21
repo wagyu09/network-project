@@ -1,3 +1,3 @@
-Portfolio,Return,Volatility,Sharpe Ratio,Max Drawdown,Random Mean Return,Random Mean Volatility,Random Mean Sharpe,Random Mean MDD,p-value (Return),p-value (Volatility),p-value (Sharpe),p-value (MDD)
-max_centrality,0.0430,0.2036,0.0677,-0.0914,0.0508,0.1984,0.0648,-0.0877,0.5364,0.5248,0.5157,0.4975
-min_centrality,0.0435,0.2009,0.0609,-0.0927,0.0508,0.1984,0.0648,-0.0877,0.5384,0.5451,0.5149,0.5619
+Portfolio,Return,Volatility,Sharpe Ratio,Max Drawdown,Random Mean Return,Random Mean Volatility,Random Mean Sharpe,Random Mean MDD,Avg_Random_Outperformance_Rate (Return),Avg_Random_Outperformance_Rate (Volatility),Avg_Random_Outperformance_Rate (Sharpe),Avg_Random_Outperformance_Rate (MDD)
+max_centrality,0.0557,0.1908,0.0734,-0.0759,0.0489,0.1921,0.0640,-0.0850,0.1788,0.2561,0.1853,0.2181
+min_centrality,0.0334,0.2153,0.0415,-0.0911,0.0489,0.1921,0.0640,-0.0850,0.2296,0.2725,0.2345,0.2318

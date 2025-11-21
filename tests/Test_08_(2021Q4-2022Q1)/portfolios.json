@@ -1,0 +1,26 @@
+{
+    "min_centrality_portfolio": [
+        "CDW",
+        "BIIB",
+        "AZO",
+        "CEG",
+        "LIN",
+        "KVUE",
+        "CBOE",
+        "SW",
+        "FICO",
+        "VLTO"
+    ],
+    "max_centrality_portfolio": [
+        "NVDA",
+        "BIIB",
+        "LDOS",
+        "CEG",
+        "TSN",
+        "KVUE",
+        "MET",
+        "SW",
+        "BXP",
+        "VLTO"
+    ]
+}

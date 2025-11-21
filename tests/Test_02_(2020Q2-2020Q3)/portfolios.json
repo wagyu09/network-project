@@ -1,0 +1,26 @@
+{
+    "min_centrality_portfolio": [
+        "NKE",
+        "PAYX",
+        "LULU",
+        "AXON",
+        "ROP",
+        "STX",
+        "VLTO",
+        "CEG",
+        "KVUE",
+        "ORCL"
+    ],
+    "max_centrality_portfolio": [
+        "MSFT",
+        "KEY",
+        "AVY",
+        "KIM",
+        "IT",
+        "ON",
+        "VLTO",
+        "CEG",
+        "KVUE",
+        "ORCL"
+    ]
+}

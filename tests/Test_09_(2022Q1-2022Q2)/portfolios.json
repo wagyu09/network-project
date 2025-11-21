@@ -1,0 +1,26 @@
+{
+    "min_centrality_portfolio": [
+        "TDY",
+        "INCY",
+        "BIIB",
+        "HPQ",
+        "CEG",
+        "CTSH",
+        "KVUE",
+        "ORCL",
+        "ZBH",
+        "VLTO"
+    ],
+    "max_centrality_portfolio": [
+        "HII",
+        "AWK",
+        "WBD",
+        "FAST",
+        "SNPS",
+        "CTSH",
+        "KVUE",
+        "ORCL",
+        "BRK-B",
+        "VLTO"
+    ]
+}

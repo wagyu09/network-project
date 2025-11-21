@@ -1,0 +1,22 @@
+{
+    "min_centrality_portfolio": [
+        "TTWO",
+        "BIIB",
+        "CSCO",
+        "NEM",
+        "KR",
+        "KVUE",
+        "VLTO",
+        "LKQ"
+    ],
+    "max_centrality_portfolio": [
+        "MCO",
+        "L",
+        "NVDA",
+        "XYZ",
+        "WEC",
+        "KVUE",
+        "VLTO",
+        "PRU"
+    ]
+}
