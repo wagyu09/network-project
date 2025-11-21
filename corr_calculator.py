@@ -61,12 +61,12 @@ def calculate_residual_correlation(daily_returns, mkt_idx):
     corr_matrix = resid_df.corr()
 
     # 2. 통계적 유의성 계산을 위한 엣지 목록 생성
-    corr_data = corr_matrix.stack(dropna=False).rename('Correlation').rename_axis(['ticker1', 'ticker2']).reset_index()
+    corr_data = corr_matrix.stack(future_stack=True).rename('Correlation').rename_axis(['ticker1', 'ticker2']).reset_index()
     corr_data = corr_data.query('ticker1 < ticker2').reset_index(drop=True)
 
     # 관측치 수 계산 (n)
     n_matrix = resid_df.notna().astype(int).T @ resid_df.notna().astype(int)
-    n_series = n_matrix.stack().rename('n').rename_axis(['ticker1', 'ticker2']).reset_index()
+    n_series = n_matrix.stack(future_stack=True).rename('n').rename_axis(['ticker1', 'ticker2']).reset_index()
     n_series = n_series.query('ticker1 < ticker2').reset_index(drop=True)
     
     # corr_data와 n_series를 'ticker1', 'ticker2' 기준으로 병합

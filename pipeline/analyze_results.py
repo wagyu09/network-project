@@ -1,9 +1,13 @@
 import pandas as pd
 import numpy as np
 import os
+import sys
+
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+import config
 
 def analyze_results():
-    all_quarters = pd.period_range(start='2020Q1', end='2025Q3', freq='Q')
+    all_quarters = pd.period_range(start=config.START_QUARTER, end=config.END_QUARTER, freq='Q')
     num_test_sets = len(all_quarters) - 1
     
     # Store detailed results for each period
@@ -14,7 +18,7 @@ def analyze_results():
         network_quarter = all_quarters[i]
         test_quarter = all_quarters[i+1]
         folder_name = f"Test_{i+1:02d}_({network_quarter}-{test_quarter})"
-        file_path = os.path.join('pipeline', 'tests', folder_name, 'backtest_results.csv')
+        file_path = os.path.join(config.TESTS_OUTPUT_DIR, folder_name, 'backtest_results.csv')
         
         try:
             df = pd.read_csv(file_path)
@@ -76,7 +80,7 @@ def analyze_results():
     print("\n--- 전체 기간 통합 분석 결과 ---")
     print(summary_df.to_string(float_format="%.4f"))
 
-    output_path = os.path.join(os.getcwd(), 'final_summary_report.csv')
+    output_path = config.FINAL_REPORT_PATH
     summary_df.to_csv(output_path, float_format="%.4f")
     print(f"\n최종 분석 결과가 다음 파일에 저장되었습니다: {output_path}")
 

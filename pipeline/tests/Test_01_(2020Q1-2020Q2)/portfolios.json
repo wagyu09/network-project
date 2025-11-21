@@ -1,16 +1,26 @@
 {
     "min_centrality_portfolio": [
-        "IBM",
-        "CSGP",
-        "SNPS",
-        "INCY",
+        "OTIS",
+        "DPZ",
+        "KVUE",
+        "VLTO",
+        "ADP",
+        "WFC",
+        "PAYC",
+        "CARR",
+        "CEG",
         "GEN"
     ],
     "max_centrality_portfolio": [
         "LLY",
-        "SYK",
-        "HCA",
-        "ROST",
+        "DRI",
+        "KVUE",
+        "VLTO",
+        "PNW",
+        "USB",
+        "ADBE",
+        "LKQ",
+        "CEG",
         "GEN"
     ]
 }

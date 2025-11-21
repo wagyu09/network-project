@@ -5,6 +5,7 @@ import random
 import io
 import os
 import hashlib
+from config import EXCLUDED_TICKERS
 
 def fetch_sp500_tickers(num_stocks: int = 500):
     """S&P 500 종목 티커와 섹터 정보를 Wikipedia에서 가져옵니다."""
@@ -16,7 +17,13 @@ def fetch_sp500_tickers(num_stocks: int = 500):
     
     all_tickers = sp500["ticker"].unique().tolist()
     
-    sectors = sp500[["ticker", "GICS Sector"]]
+    for i in EXCLUDED_TICKERS:
+        if i in all_tickers:
+            all_tickers.remove(i)
+        else:
+            pass
+            
+    sectors = sp500[sp500['ticker'].isin(all_tickers)][["ticker", "GICS Sector"]]
     
     return sectors, all_tickers
 
