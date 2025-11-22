@@ -169,8 +169,14 @@ def run_single_quarter_analysis(i: int, network_quarter: pd.Period, test_quarter
             
             # 중심성 점수가 가장 낮은 종목과 높은 종목을 선택
             if local_centrality:
-                min_centrality_portfolio.append(min(local_centrality, key=local_centrality.get))
-                max_centrality_portfolio.append(max(local_centrality, key=local_centrality.get))
+                # 재현성 보장을 위한 2차 정렬 기준 추가:
+                # 1. 중심성 점수 기준 정렬
+                # 2. (동점일 경우) 티커 이름 알파벳순으로 정렬
+                min_ticker = min(local_centrality.keys(), key=lambda t: (local_centrality.get(t, 0), t))
+                max_ticker = max(local_centrality.keys(), key=lambda t: (local_centrality.get(t, 0), t))
+                
+                min_centrality_portfolio.append(min_ticker)
+                max_centrality_portfolio.append(max_ticker)
         
         # 커뮤니티에 종목이 하나만 있으면, 그 종목을 양쪽 포트폴리오에 모두 포함
         elif len(tickers_in_comm) == 1:
