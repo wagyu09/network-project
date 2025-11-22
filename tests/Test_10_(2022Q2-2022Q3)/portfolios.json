@@ -7,9 +7,9 @@
         "AAPL",
         "VLTO",
         "BLK",
-        "SCHW",
+        "ORCL",
         "TDY",
-        "VRSN"
+        "SYY"
     ],
     "max_centrality_portfolio": [
         "ZTS",
@@ -21,6 +21,6 @@
         "MAS",
         "PRU",
         "TRGP",
-        "CHD"
+        "PEP"
     ]
 }

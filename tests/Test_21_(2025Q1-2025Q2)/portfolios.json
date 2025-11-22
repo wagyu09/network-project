@@ -1,14 +1,14 @@
 {
     "min_centrality_portfolio": [
         "EA",
-        "MGM",
-        "META",
+        "EIX",
+        "FICO",
         "MRNA",
         "ALGN",
         "TSLA"
     ],
     "max_centrality_portfolio": [
-        "ITW",
+        "NDSN",
         "SO",
         "PEG",
         "MRNA",

@@ -1,24 +1,24 @@
 {
     "min_centrality_portfolio": [
         "CSCO",
-        "SNA",
-        "LYV",
+        "GPN",
+        "CPRT",
         "ISRG",
-        "PSKY",
+        "ACN",
         "DE",
-        "NWS",
-        "SNPS",
+        "CMG",
+        "CDNS",
         "BF-B"
     ],
     "max_centrality_portfolio": [
         "WAT",
-        "SNA",
-        "RF",
+        "UNH",
+        "SYF",
         "PPL",
-        "APA",
+        "OKE",
         "DAY",
         "NWSA",
         "SNPS",
-        "BF-B"
+        "TSLA"
     ]
 }

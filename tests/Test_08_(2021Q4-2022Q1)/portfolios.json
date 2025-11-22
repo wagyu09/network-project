@@ -1,6 +1,6 @@
 {
     "min_centrality_portfolio": [
-        "TSLA",
+        "CDW",
         "BIIB",
         "ADSK",
         "CEG",
@@ -14,13 +14,13 @@
     "max_centrality_portfolio": [
         "MSCI",
         "BIIB",
-        "JCI",
+        "TT",
         "CEG",
         "K",
         "KVUE",
-        "LYB",
+        "MET",
         "SW",
-        "BA",
+        "DAL",
         "VLTO"
     ]
 }

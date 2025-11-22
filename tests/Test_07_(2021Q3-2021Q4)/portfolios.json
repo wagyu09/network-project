@@ -7,12 +7,12 @@
         "KVUE",
         "NEM",
         "TMUS",
-        "INCY",
+        "ANET",
         "VLTO",
         "AON"
     ],
     "max_centrality_portfolio": [
-        "MPWR",
+        "NXPI",
         "WEC",
         "AOS",
         "CEG",
@@ -21,6 +21,6 @@
         "TMUS",
         "MOH",
         "VLTO",
-        "AON"
+        "HAS"
     ]
 }
