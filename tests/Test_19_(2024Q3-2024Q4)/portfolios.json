@@ -2,16 +2,16 @@
     "min_centrality_portfolio": [
         "PODD",
         "AAPL",
-        "K",
-        "LYV",
+        "GLW",
+        "FTNT",
         "TSLA",
         "INTU"
     ],
     "max_centrality_portfolio": [
-        "SNA",
+        "ROK",
         "AAPL",
-        "AMAT",
-        "L",
+        "TER",
+        "CFG",
         "TSLA",
         "LNT"
     ]

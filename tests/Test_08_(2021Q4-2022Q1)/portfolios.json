@@ -1,26 +1,26 @@
 {
     "min_centrality_portfolio": [
-        "CDW",
+        "TSLA",
         "BIIB",
-        "AZO",
+        "ADSK",
         "CEG",
-        "LIN",
+        "MRK",
         "KVUE",
         "CBOE",
         "SW",
-        "FICO",
+        "APTV",
         "VLTO"
     ],
     "max_centrality_portfolio": [
-        "NVDA",
+        "MSCI",
         "BIIB",
-        "LDOS",
+        "JCI",
         "CEG",
-        "TSN",
+        "K",
         "KVUE",
-        "MET",
+        "LYB",
         "SW",
-        "BXP",
+        "BA",
         "VLTO"
     ]
 }

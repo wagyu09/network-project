@@ -2,19 +2,19 @@
     "min_centrality_portfolio": [
         "ALL",
         "WMT",
-        "JBL",
-        "CTSH",
+        "ABBV",
+        "DPZ",
         "WAB",
-        "CAH",
+        "AZO",
         "AXP"
     ],
     "max_centrality_portfolio": [
-        "WMB",
-        "AEE",
-        "NOW",
-        "VTRS",
-        "SWK",
-        "OMC",
-        "BEN"
+        "XOM",
+        "SRE",
+        "AVGO",
+        "MMC",
+        "PNR",
+        "SPGI",
+        "SCHW"
     ]
 }

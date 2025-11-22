@@ -2,7 +2,7 @@
     "min_centrality_portfolio": [
         "VLTO",
         "EL",
-        "BLK",
+        "NWSA",
         "FE",
         "MRNA",
         "CEG",
@@ -11,10 +11,10 @@
     ],
     "max_centrality_portfolio": [
         "VLTO",
-        "PRU",
-        "PPL",
-        "HON",
-        "ADBE",
+        "AFL",
+        "ETR",
+        "PH",
+        "ROL",
         "CEG",
         "KVUE",
         "NKE"

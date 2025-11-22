@@ -1,18 +1,18 @@
 {
     "min_centrality_portfolio": [
         "ORCL",
-        "COST",
+        "HSIC",
         "HOLX",
         "PFE",
-        "LULU",
+        "DIS",
         "BA"
     ],
     "max_centrality_portfolio": [
-        "HBAN",
+        "GLW",
         "AWK",
-        "MAA",
+        "MDT",
         "PFE",
         "AJG",
-        "FCX"
+        "XOM"
     ]
 }

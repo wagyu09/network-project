@@ -7,18 +7,18 @@
         "VLTO",
         "CRM",
         "FDS",
-        "SW",
+        "ACN",
         "IBM"
     ],
     "max_centrality_portfolio": [
-        "JCI",
+        "EA",
         "KVUE",
         "TSLA",
-        "PEP",
+        "AEP",
         "VLTO",
-        "DD",
-        "AON",
-        "LRCX",
+        "MAS",
+        "VRSK",
+        "MPWR",
         "MET"
     ]
 }

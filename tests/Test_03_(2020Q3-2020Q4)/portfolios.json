@@ -1,12 +1,12 @@
 {
     "min_centrality_portfolio": [
-        "NDAQ",
+        "ICE",
         "BBY",
         "CSCO",
         "UBER",
         "VLTO",
         "CPRT",
-        "EQT",
+        "CAH",
         "BR",
         "KVUE",
         "SW",
@@ -14,13 +14,13 @@
         "GEN"
     ],
     "max_centrality_portfolio": [
-        "BXP",
-        "WAB",
-        "ADBE",
+        "CMS",
+        "ETN",
+        "CDNS",
         "UBER",
         "VLTO",
-        "IPG",
-        "GD",
+        "DAL",
+        "PSX",
         "MDT",
         "KVUE",
         "SW",

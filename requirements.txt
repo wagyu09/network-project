@@ -7,3 +7,4 @@ networkx
 python-louvain
 matplotlib
 scipy
+statsmodels

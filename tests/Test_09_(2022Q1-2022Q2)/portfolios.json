@@ -4,23 +4,23 @@
         "INCY",
         "BIIB",
         "HPQ",
-        "CEG",
+        "AMZN",
         "CTSH",
         "KVUE",
         "ORCL",
-        "ZBH",
+        "PCG",
         "VLTO"
     ],
     "max_centrality_portfolio": [
-        "HII",
-        "AWK",
-        "WBD",
-        "FAST",
-        "SNPS",
+        "MOS",
+        "AEE",
+        "FOX",
+        "MAS",
+        "IDXX",
         "CTSH",
         "KVUE",
         "ORCL",
-        "BRK-B",
+        "CMI",
         "VLTO"
     ]
 }

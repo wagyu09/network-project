@@ -1,24 +1,24 @@
 {
     "min_centrality_portfolio": [
         "VLTO",
-        "MRNA",
+        "SW",
         "DPZ",
         "CHTR",
         "DGX",
         "KVUE",
         "PAYX",
-        "AKAM",
-        "BBY"
+        "CME",
+        "TRMB"
     ],
     "max_centrality_portfolio": [
         "VLTO",
-        "MHK",
+        "CBRE",
         "XEL",
-        "MET",
-        "IBM",
+        "DOV",
+        "ORCL",
         "KVUE",
         "GWW",
         "QCOM",
-        "OXY"
+        "EOG"
     ]
 }

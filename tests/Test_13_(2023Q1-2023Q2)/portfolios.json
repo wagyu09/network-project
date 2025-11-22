@@ -1,20 +1,20 @@
 {
     "min_centrality_portfolio": [
         "INCY",
-        "ZBH",
-        "UNP",
+        "GEN",
+        "MRNA",
         "KVUE",
         "DXCM",
         "LULU",
         "VLTO",
-        "JBL"
+        "AAPL"
     ],
     "max_centrality_portfolio": [
         "GL",
-        "IQV",
-        "MSFT",
+        "TMO",
+        "SWK",
         "KVUE",
-        "WEC",
+        "PPL",
         "LULU",
         "VLTO",
         "SLB"

@@ -1,24 +1,24 @@
 {
     "min_centrality_portfolio": [
-        "OTIS",
+        "AOS",
         "DPZ",
         "KVUE",
         "VLTO",
         "ADP",
-        "WFC",
-        "PAYC",
-        "CARR",
+        "BK",
+        "AAPL",
+        "CSGP",
         "CEG",
         "GEN"
     ],
     "max_centrality_portfolio": [
-        "LLY",
+        "D",
         "DRI",
         "KVUE",
         "VLTO",
-        "PNW",
-        "USB",
-        "ADBE",
+        "CBOE",
+        "BAC",
+        "AMAT",
         "LKQ",
         "CEG",
         "GEN"

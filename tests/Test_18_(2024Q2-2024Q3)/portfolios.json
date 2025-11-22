@@ -1,24 +1,24 @@
 {
     "min_centrality_portfolio": [
         "TTWO",
-        "ZTS",
+        "LYV",
         "IP",
         "AKAM",
-        "BALL",
+        "NWS",
         "LW",
         "SW",
-        "DPZ",
+        "ALGN",
         "AAPL"
     ],
     "max_centrality_portfolio": [
         "TTWO",
-        "OMC",
-        "ITW",
-        "ETR",
-        "BK",
-        "PEG",
+        "ADP",
+        "L",
+        "EVRG",
+        "ALLE",
+        "DVN",
         "RSG",
-        "NVDA",
+        "APH",
         "AAPL"
     ]
 }

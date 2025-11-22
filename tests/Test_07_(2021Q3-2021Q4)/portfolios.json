@@ -2,25 +2,25 @@
     "min_centrality_portfolio": [
         "EBAY",
         "STX",
-        "NDSN",
+        "ADSK",
         "CEG",
         "KVUE",
         "NEM",
         "TMUS",
-        "ANET",
+        "INCY",
         "VLTO",
         "AON"
     ],
     "max_centrality_portfolio": [
-        "MCHP",
-        "AWK",
-        "DE",
+        "MPWR",
+        "WEC",
+        "AOS",
         "CEG",
         "KVUE",
-        "MPC",
+        "JPM",
         "TMUS",
-        "CVS",
+        "MOH",
         "VLTO",
-        "HAS"
+        "AON"
     ]
 }
