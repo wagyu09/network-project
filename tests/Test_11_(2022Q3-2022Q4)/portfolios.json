@@ -1,22 +1,18 @@
 {
-    "min_centrality_portfolio": [
+    "min_eigenvector_portfolio": [
         "EA",
         "BIIB",
-        "AAPL",
-        "FICO",
+        "PANW",
         "TSN",
-        "KVUE",
-        "VLTO",
+        "AAPL",
         "LW"
     ],
-    "max_centrality_portfolio": [
+    "max_eigenvector_portfolio": [
         "ETN",
-        "AIG",
+        "BAC",
+        "DAL",
+        "XEL",
         "AMAT",
-        "UAL",
-        "AEE",
-        "KVUE",
-        "VLTO",
-        "DE"
+        "HAL"
     ]
 }

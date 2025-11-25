@@ -1,18 +1,18 @@
 {
-    "min_centrality_portfolio": [
+    "min_eigenvector_portfolio": [
         "ORCL",
-        "HSIC",
-        "HOLX",
+        "CSCO",
+        "FDX",
         "PFE",
-        "DIS",
+        "NFLX",
         "BA"
     ],
-    "max_centrality_portfolio": [
-        "GLW",
-        "AWK",
-        "MDT",
+    "max_eigenvector_portfolio": [
+        "HBAN",
+        "WEC",
+        "ABT",
         "PFE",
         "AJG",
-        "XOM"
+        "DVN"
     ]
 }

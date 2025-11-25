@@ -1,26 +1,22 @@
 {
-    "min_centrality_portfolio": [
-        "YUM",
-        "GEN",
-        "KVUE",
-        "MNST",
-        "AAPL",
-        "VLTO",
-        "BLK",
-        "ORCL",
+    "min_eigenvector_portfolio": [
         "TDY",
-        "SYY"
-    ],
-    "max_centrality_portfolio": [
-        "ZTS",
+        "YUM",
+        "TMUS",
+        "EA",
+        "ORCL",
         "GEN",
-        "KVUE",
+        "SCHW",
+        "ACN"
+    ],
+    "max_eigenvector_portfolio": [
+        "COP",
+        "DHR",
         "D",
-        "LYV",
-        "VLTO",
-        "MAS",
+        "MGM",
+        "CAG",
+        "GEN",
         "PRU",
-        "TRGP",
-        "PEP"
+        "PNR"
     ]
 }

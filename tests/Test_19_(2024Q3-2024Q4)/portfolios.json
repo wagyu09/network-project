@@ -1,16 +1,16 @@
 {
-    "min_centrality_portfolio": [
-        "PODD",
+    "min_eigenvector_portfolio": [
+        "AKAM",
         "AAPL",
-        "CTAS",
+        "DLTR",
         "FTNT",
         "TSLA",
-        "INTU"
+        "PANW"
     ],
-    "max_centrality_portfolio": [
-        "ROK",
+    "max_eigenvector_portfolio": [
+        "MAS",
         "AAPL",
-        "TER",
+        "LRCX",
         "CFG",
         "TSLA",
         "LNT"

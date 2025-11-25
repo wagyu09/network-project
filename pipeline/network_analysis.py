@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import matplotlib.cm as cm
 
 def calculate_centrality(G: nx.Graph) -> dict:
-    """그래프 내 각 노드의 중심성(Degree Centrality)을 계산
+    """그래프 내 각 노드의 중심성(Eigenvector Centrality)을 계산
 
     Args:
         G (nx.Graph): NetworkX 그래프 객체
@@ -18,7 +18,14 @@ def calculate_centrality(G: nx.Graph) -> dict:
     """
     if not G.nodes():
         return {}
-    return nx.degree_centrality(G)
+    
+    try:
+        # 가중치를 반영한 아이겐벡터 중심성 계산
+        # max_iter를 충분히 늘려 수렴 가능성 높임
+        return nx.eigenvector_centrality(G, weight='Correlation', max_iter=1000)
+    except nx.PowerIterationFailedConvergence:
+        print("  Warning: Eigenvector centrality did not converge. Falling back to degree centrality.")
+        return nx.degree_centrality(G)
 
 def create_network_from_edges(edges_df: pd.DataFrame, weight_col: str = 'Correlation', edge_attrs=None) -> nx.Graph:
     """엣지 목록 DataFrame으로부터 NetworkX 그래프를 생성
@@ -54,50 +61,6 @@ def detect_communities(G: nx.Graph, weight_col: str = 'Correlation', random_stat
     """
     partition = community_louvain.best_partition(G, weight=weight_col, random_state=random_state)
     return partition
-
-def calculate_inter_community_correlation(all_edges: pd.DataFrame, partition: dict) -> pd.DataFrame:
-    """군집 정보를 사용하여 군집 간 평균 상관관계를 계산
-
-    Args:
-        all_edges (pd.DataFrame): 'ticker1', 'ticker2', 'Correlation' 컬럼을 포함하는
-            모든 엣지 데이터프레임
-        partition (dict): 노드를 커뮤니티 ID에 매핑하는 딕셔너리
-
-    Returns:
-        pd.DataFrame: 군집 간 평균 상관관계를 담은 데이터프레임 (매트릭스 형태)
-            파티션이 비어있으면 빈 데이터프레임 반환
-    """
-    if not partition:
-        return pd.DataFrame()
-
-    # 모든 고유한 커뮤니티 ID를 가져옴
-    all_community_ids = sorted(list(set(partition.values())))
-    
-    # 군집 간 평균 상관관계를 저장할 빈 데이터프레임 생성
-    inter_community_matrix = pd.DataFrame(0.0, index=all_community_ids, columns=all_community_ids)
-
-    # 각 엣지에 대해 커뮤니티 정보 추가
-    edges_with_comm = all_edges.copy()
-    edges_with_comm['comm1'] = edges_with_comm['ticker1'].map(partition)
-    edges_with_comm['comm2'] = edges_with_comm['ticker2'].map(partition)
-
-    # 파티션에 없는 노드 관련 엣지 제외 및 군집 내부 엣지 제외
-    inter_edges = edges_with_comm.dropna(subset=['comm1', 'comm2'])
-    inter_edges = inter_edges[inter_edges['comm1'] != inter_edges['comm2']]
-    
-    if inter_edges.empty:
-        return inter_community_matrix
-
-    # (comm1, comm2) 순서 정렬하여 중복 방지 및 평균 계산
-    inter_edges['comm_pair'] = inter_edges.apply(lambda row: tuple(sorted((int(row['comm1']), int(row['comm2'])))), axis=1)
-    avg_inter_corr_series = inter_edges.groupby('comm_pair')['Correlation'].mean()
-
-    # 계산된 평균 상관관계를 매트릭스에 채워 넣음
-    for (c1, c2), corr_val in avg_inter_corr_series.items():
-        inter_community_matrix.loc[c1, c2] = corr_val
-        inter_community_matrix.loc[c2, c1] = corr_val # 대칭적으로 채움
-        
-    return inter_community_matrix
 
 def visualize_network(G: nx.Graph, partition: dict, output_filename: str = 'network_visualization.png'):
     """커뮤니티가 탐지된 네트워크를 시각화하고 파일로 저장

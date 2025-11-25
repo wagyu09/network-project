@@ -14,12 +14,12 @@ END_QUARTER = '2025Q3'
 # --- 파일 경로 설정 ---
 # 파이프라인 실행 결과(분기별 테스트)가 저장될 디렉토리
 TESTS_OUTPUT_DIR = 'tests'
-# 최종 분석 결과 리포트가 저장될 경로 및 파일명
-FINAL_REPORT_PATH = 'final_summary_report.csv'
 
 # --- 모델 파라미터 설정 ---
 # 상관관계 행렬에서 유의미한 엣지를 필터링할 때 사용되는 유의수준(alpha)
 ALPHA = 0.01
+# 상관관계 계수(절댓값) 임계값. 0.0으로 설정하여 통계적 유의성(p-value)만 사용
+CORRELATION_THRESHOLD = 0.0
 # 전략 포트폴리오의 성과 비교를 위해 생성할 무작위 포트폴리오의 개수
 NUM_RANDOM_PORTFOLIOS = 1000
 

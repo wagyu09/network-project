@@ -1,28 +1,22 @@
 {
-    "min_centrality_portfolio": [
-        "KVUE",
+    "min_eigenvector_portfolio": [
+        "TMUS",
         "NKE",
-        "CMCSA",
-        "INTC",
+        "BIIB",
+        "DLTR",
+        "TGT",
         "CSCO",
-        "SW",
-        "STE",
-        "VLTO",
-        "CEG",
-        "DLTR",
-        "DPZ"
+        "DPZ",
+        "SW"
     ],
-    "max_centrality_portfolio": [
-        "KVUE",
+    "max_eigenvector_portfolio": [
+        "MPWR",
         "PRU",
-        "RSG",
-        "PYPL",
-        "EXPE",
-        "SW",
         "LNT",
-        "VLTO",
-        "CEG",
         "DLTR",
-        "DPZ"
+        "GWW",
+        "RCL",
+        "DPZ",
+        "SW"
     ]
 }

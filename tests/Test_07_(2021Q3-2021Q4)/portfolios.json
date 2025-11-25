@@ -1,26 +1,18 @@
 {
-    "min_centrality_portfolio": [
-        "EBAY",
+    "min_eigenvector_portfolio": [
+        "DAY",
         "STX",
-        "ADSK",
-        "CEG",
-        "KVUE",
-        "NEM",
-        "TMUS",
-        "ANET",
-        "VLTO",
-        "AON"
+        "STZ",
+        "HAS",
+        "META",
+        "TMUS"
     ],
-    "max_centrality_portfolio": [
-        "NXPI",
+    "max_eigenvector_portfolio": [
         "WEC",
-        "AOS",
-        "CEG",
-        "KVUE",
-        "JPM",
-        "TMUS",
-        "MOH",
-        "VLTO",
-        "HAS"
+        "FITB",
+        "ELV",
+        "ITW",
+        "AMAT",
+        "TMUS"
     ]
 }

@@ -1,26 +1,22 @@
 {
-    "min_centrality_portfolio": [
-        "TDY",
-        "INCY",
-        "BIIB",
-        "DVA",
-        "AMZN",
-        "CTSH",
-        "KVUE",
+    "min_eigenvector_portfolio": [
         "ORCL",
+        "RMD",
+        "BIIB",
+        "FISV",
         "PCG",
-        "VLTO"
+        "TSLA",
+        "TDY",
+        "CTSH"
     ],
-    "max_centrality_portfolio": [
-        "TRGP",
+    "max_eigenvector_portfolio": [
+        "ORCL",
         "AEE",
         "FOX",
-        "MAS",
         "IDXX",
-        "CTSH",
-        "KVUE",
-        "ORCL",
-        "CMI",
-        "VLTO"
+        "KEY",
+        "MCHP",
+        "COP",
+        "CTSH"
     ]
 }

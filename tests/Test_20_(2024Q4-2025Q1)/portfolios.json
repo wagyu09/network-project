@@ -1,5 +1,5 @@
 {
-    "min_centrality_portfolio": [
+    "min_eigenvector_portfolio": [
         "APH",
         "NFLX",
         "ADBE",
@@ -7,12 +7,12 @@
         "APD",
         "NVDA"
     ],
-    "max_centrality_portfolio": [
+    "max_eigenvector_portfolio": [
         "ARE",
-        "WEC",
+        "EIX",
         "GS",
-        "SLB",
-        "WM",
+        "HAL",
+        "PAYC",
         "NVDA"
     ]
 }

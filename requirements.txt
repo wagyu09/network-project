@@ -5,6 +5,5 @@ requests
 lxml
 networkx
 python-louvain
-matplotlib
 scipy
-statsmodels
+matplotlib

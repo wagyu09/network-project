@@ -1,26 +1,22 @@
 {
-    "min_centrality_portfolio": [
-        "GRMN",
-        "PCAR",
-        "KVUE",
-        "GEN",
-        "CDW",
-        "VLTO",
+    "min_eigenvector_portfolio": [
+        "WMT",
+        "ODFL",
+        "CTSH",
+        "SBUX",
+        "CTAS",
         "VTRS",
-        "IFF",
-        "CEG",
-        "CTAS"
+        "UPS",
+        "NVR"
     ],
-    "max_centrality_portfolio": [
-        "CDNS",
-        "LYB",
-        "KVUE",
-        "AEE",
-        "UHS",
-        "VLTO",
+    "max_eigenvector_portfolio": [
+        "MPWR",
+        "KEY",
+        "LNT",
+        "UDR",
+        "CTAS",
         "VTRS",
-        "CNC",
-        "CEG",
-        "CTAS"
+        "FOXA",
+        "DHI"
     ]
 }

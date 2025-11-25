@@ -1,4 +1,0 @@
-,Return,Volatility,Sharpe,MDD,Top % (Return),p-value (Return),Top % (Volatility),p-value (Volatility),Top % (Sharpe),p-value (Sharpe),Top % (MDD),p-value (MDD)
-max_centrality,0.0665,0.1931,0.0961,-0.0684,15.3%,0.0000,25.0%,0.0056,16.0%,0.0000,17.3%,0.0000
-min_centrality,0.0405,0.2051,0.0513,-0.0911,21.0%,0.0002,26.2%,0.0163,21.3%,0.0002,23.5%,0.0019
-random_avg,0.0489,0.1921,0.0640,-0.0850,,,,,,,,

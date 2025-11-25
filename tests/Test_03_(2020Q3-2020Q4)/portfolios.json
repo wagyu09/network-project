@@ -1,30 +1,24 @@
 {
-    "min_centrality_portfolio": [
-        "BALL",
-        "BBY",
+    "min_eigenvector_portfolio": [
         "CSCO",
-        "UBER",
-        "VLTO",
-        "CPRT",
-        "CAH",
-        "BR",
-        "KVUE",
+        "DHI",
+        "TSLA",
         "SW",
-        "CEG",
+        "MA",
+        "NTAP",
+        "UBER",
+        "KR",
         "GEN"
     ],
-    "max_centrality_portfolio": [
-        "CMS",
+    "max_eigenvector_portfolio": [
+        "ADSK",
         "ETN",
-        "CDNS",
-        "UBER",
-        "VLTO",
-        "MAR",
-        "PSX",
         "MDT",
-        "KVUE",
         "SW",
-        "CEG",
+        "DAL",
+        "L",
+        "UBER",
+        "CMS",
         "GEN"
     ]
 }

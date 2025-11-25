@@ -1,26 +1,18 @@
 {
-    "min_centrality_portfolio": [
+    "min_eigenvector_portfolio": [
         "AOS",
-        "DPZ",
-        "KVUE",
-        "VLTO",
-        "ADP",
-        "BK",
-        "AAPL",
-        "CARR",
-        "CEG",
-        "GEN"
+        "CSGP",
+        "TSCO",
+        "PAYC",
+        "GEN",
+        "USB"
     ],
-    "max_centrality_portfolio": [
-        "D",
-        "DRI",
-        "KVUE",
-        "VLTO",
-        "CBOE",
-        "BAC",
-        "AMAT",
+    "max_eigenvector_portfolio": [
+        "ATO",
         "LKQ",
-        "CEG",
-        "GEN"
+        "TDG",
+        "AMAT",
+        "GEN",
+        "AMP"
     ]
 }

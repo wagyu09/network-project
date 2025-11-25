@@ -5,12 +5,12 @@
 무작위 포트폴리오와 비교하여 전략의 유효성을 검증하는 것을 목적으로 함
 """
 import os
-import sys
 import pandas as pd
 import numpy as np
 import random
 import json
 import networkx as nx
+import community as community_louvain # 모듈러리티 계산을 위해 추가
 
 import config
 from pipeline.data_loader import fetch_sp500_tickers, load_raw_stock_data, load_market_data
@@ -22,7 +22,6 @@ from pipeline.network_analysis import (
     calculate_centrality,
     create_network_from_edges,
     detect_communities,
-    calculate_inter_community_correlation,
     visualize_network
 )
 
@@ -97,6 +96,24 @@ def run_single_quarter_analysis(i: int, network_quarter: pd.Period, test_quarter
     test_prices = master_price_data[test_start_date:test_end_date]
     network_mkt = mkt_idx_all[(mkt_idx_all['date'] >= network_start_date) & (mkt_idx_all['date'] <= network_end_date)]
 
+    # --- Data Availability Check ---
+    # Filter tickers to ensure they have valid data in both the network construction AND test periods.
+    # This prevents "future" stocks (like spin-offs) from being selected in past periods where they had no data,
+    # which causes portfolio calculations to return empty/NaN results.
+    has_data_network = network_returns.notna().any()
+    has_data_test = test_prices.notna().any()
+    
+    valid_tickers = [
+        t for t in valid_tickers 
+        if has_data_network.get(t, False) and has_data_test.get(t, False)
+    ]
+    
+    if not valid_tickers:
+        print("  Warning: No valid tickers found with data for this period. Skipping.")
+        return
+
+    print(f"  Active tickers for this period: {len(valid_tickers)}")
+
     # 2. 네트워크 구축
     # 2-1. 시장 효과 제거 (잔차 계산) 및 상관관계 행렬 생성
     network_returns_long = network_returns.stack(future_stack=True).reset_index()
@@ -112,8 +129,8 @@ def run_single_quarter_analysis(i: int, network_quarter: pd.Period, test_quarter
     corr_matrix.to_csv(os.path.join(output_dir, 'correlation_matrix.csv'))
 
     # 2-2. 통계적 유의성에 기반한 엣지 필터링
-    print("  Filtering edges...")
-    p_edges = threshold(corr_stats, alpha=alpha, c_min=0.0)
+    print(f"  Filtering edges (alpha={alpha}, c_min={config.CORRELATION_THRESHOLD})...")
+    p_edges = threshold(corr_stats, alpha=alpha, c_min=config.CORRELATION_THRESHOLD)
     
     # --- Gephi 시각화용 엣지 리스트 저장 ---
     gephi_edges = p_edges[['ticker1', 'ticker2', 'Correlation']].copy()
@@ -123,6 +140,8 @@ def run_single_quarter_analysis(i: int, network_quarter: pd.Period, test_quarter
 
     # 3. 네트워크 분석 및 포트폴리오 구성
     # 3-1. 커뮤니티 탐지 (Louvain 알고리즘)
+    modularity_score = 0.0 # 초기화
+    
     if p_edges.empty:
         print("  Warning: No significant edges found.")
         partition = {node: i for i, node in enumerate(valid_tickers)}
@@ -138,14 +157,16 @@ def run_single_quarter_analysis(i: int, network_quarter: pd.Period, test_quarter
             G_community.add_nodes_from(valid_tickers) # 모든 티커를 노드로 포함
             partition = detect_communities(G_community, weight_col='Correlation', random_state=42)
             print(f"  Detected {len(set(partition.values()))} communities.")
+            
+            # 모듈러리티 점수 계산
+            try:
+                modularity_score = community_louvain.modularity(partition, G_community, weight='Correlation')
+            except ValueError:
+                modularity_score = 0.0
     
-    # 커뮤니티 간 평균 상관관계 계산 (참고용 데이터)
-    inter_community_matrix = calculate_inter_community_correlation(p_edges, partition)
-    inter_community_matrix.to_csv(os.path.join(output_dir, 'inter_community_correlation.csv'))
-
     # 3-2. 포트폴리오 구성 (지역 중심성 기반)
-    print("  Constructing centrality portfolios...")
-    min_centrality_portfolio, max_centrality_portfolio = [], []
+    print("  Constructing centrality portfolios (Eigenvector)...")
+    min_eigenvector_portfolio, max_eigenvector_portfolio = [], []
     
     # 각 커뮤니티 ID에 해당하는 티커들을 그룹화
     communities_to_tickers = {comm_id: [t for t, c in partition.items() if c == comm_id and t in valid_tickers] for comm_id in set(partition.values())}
@@ -161,30 +182,43 @@ def run_single_quarter_analysis(i: int, network_quarter: pd.Period, test_quarter
         
         # 커뮤니티 내에 엣지가 있고, 종목이 2개 이상일 때만 중심성 계산
         if not community_edges.empty and len(tickers_in_comm) > 1:
-            G_community_subgraph = create_network_from_edges(community_edges, weight_col='Correlation')
+            # [수정됨] 중심성 계산 시 양의 상관관계(Correlation > 0)만 사용
+            positive_community_edges = community_edges[community_edges['Correlation'] > 0]
+            
+            if positive_community_edges.empty:
+                 continue
+
+            G_community_subgraph = create_network_from_edges(positive_community_edges, weight_col='Correlation')
             G_community_subgraph.add_nodes_from(tickers_in_comm)
             
-            # 해당 서브그래프 내에서 '지역 중심성' 계산
+            # 해당 서브그래프 내에서 '지역 중심성(Eigenvector)' 계산
             local_centrality = calculate_centrality(G_community_subgraph)
             
-            # 중심성 점수가 가장 낮은 종목과 높은 종목을 선택
+            # 중심성 점수가 가장 낮은 종목과 높은 종목을 선택 (각 군집당 1개 고정)
             if local_centrality:
                 # 재현성 보장을 위한 2차 정렬 기준 추가:
                 # 1. 중심성 점수 기준 정렬
                 # 2. (동점일 경우) 티커 이름 알파벳순으로 정렬
-                min_ticker = min(local_centrality.keys(), key=lambda t: (local_centrality.get(t, 0), t))
-                max_ticker = max(local_centrality.keys(), key=lambda t: (local_centrality.get(t, 0), t))
+                sorted_tickers = sorted(local_centrality.keys(), key=lambda t: (local_centrality.get(t, 0), t))
                 
-                min_centrality_portfolio.append(min_ticker)
-                max_centrality_portfolio.append(max_ticker)
+                # 각 군집당 1개씩만 선정 (대표 선수)
+                n_select = 1
+                
+                # 하위 1개 선정
+                min_tickers = sorted_tickers[:n_select]
+                min_eigenvector_portfolio.extend(min_tickers)
+                
+                # 상위 1개 선정
+                max_tickers = sorted_tickers[-n_select:]
+                max_eigenvector_portfolio.extend(max_tickers)
         
         # 커뮤니티에 종목이 하나만 있으면, 그 종목을 양쪽 포트폴리오에 모두 포함
         elif len(tickers_in_comm) == 1:
-            min_centrality_portfolio.append(tickers_in_comm[0])
-            max_centrality_portfolio.append(tickers_in_comm[0])
+            min_eigenvector_portfolio.append(tickers_in_comm[0])
+            max_eigenvector_portfolio.append(tickers_in_comm[0])
 
     # 구성된 포트폴리오 종목 리스트를 json 파일로 저장
-    portfolios_to_save = {'min_centrality_portfolio': min_centrality_portfolio, 'max_centrality_portfolio': max_centrality_portfolio}
+    portfolios_to_save = {'min_eigenvector_portfolio': min_eigenvector_portfolio, 'max_eigenvector_portfolio': max_eigenvector_portfolio}
     with open(os.path.join(output_dir, 'portfolios.json'), 'w') as f: json.dump(portfolios_to_save, f, indent=4)
 
     # 4. 백테스팅 및 성과 분석
@@ -192,23 +226,26 @@ def run_single_quarter_analysis(i: int, network_quarter: pd.Period, test_quarter
     all_performance_results = []
 
     # 4-1. 주요 전략 포트폴리오 성과 계산
-    perf_min = get_portfolio_performance(test_prices[min_centrality_portfolio] if min_centrality_portfolio else pd.DataFrame())
-    perf_min['portfolio_type'] = 'min_centrality'
+    perf_min = get_portfolio_performance(test_prices[min_eigenvector_portfolio] if min_eigenvector_portfolio else pd.DataFrame())
+    perf_min['portfolio_type'] = 'min_eigenvector'
     all_performance_results.append(perf_min)
 
-    perf_max = get_portfolio_performance(test_prices[max_centrality_portfolio] if max_centrality_portfolio else pd.DataFrame())
-    perf_max['portfolio_type'] = 'max_centrality'
+    perf_max = get_portfolio_performance(test_prices[max_eigenvector_portfolio] if max_eigenvector_portfolio else pd.DataFrame())
+    perf_max['portfolio_type'] = 'max_eigenvector'
     all_performance_results.append(perf_max)
     
     # 4-2. 비교 분석을 위한 무작위 포트폴리오 성과 계산
-    # 선택할 종목 수는 커뮤니티의 개수와 동일
-    num_to_select = len(communities_to_tickers)
+    # [수정됨] 공정한 비교를 위해 전략 포트폴리오와 동일한 수의 종목을 무작위로 선택
+    num_to_select = len(min_eigenvector_portfolio)
+    
     if num_to_select > 0 and len(valid_tickers) >= num_to_select:
         for _ in range(num_random_portfolios):
             random_tickers = random.sample(valid_tickers, num_to_select)
             perf_random = get_portfolio_performance(test_prices[random_tickers])
             perf_random['portfolio_type'] = 'random'
             all_performance_results.append(perf_random)
+    else:
+        print(f"  Warning: Skipping random portfolios. Strategy size: {num_to_select}, Valid tickers: {len(valid_tickers)}")
     
     # 모든 성과 결과를 하나의 CSV 파일로 저장
     performance_df = pd.DataFrame(all_performance_results)
@@ -221,7 +258,16 @@ def run_single_quarter_analysis(i: int, network_quarter: pd.Period, test_quarter
     viz_path = os.path.join(output_dir, 'network_visualization.png')
     print("  Generating and saving network visualization...")
     visualize_network(G_final_visual, partition, output_filename=viz_path)
+
     print(f"--- Completed: {folder_name} ---")
+    
+    return {
+        'Quarter': str(network_quarter),
+        'Num_Nodes': G_community.number_of_nodes() if 'G_community' in locals() else 0,
+        'Num_Edges': len(p_edges),
+        'Num_Communities': len(set(partition.values())) if partition else 0,
+        'Modularity': modularity_score
+    }
 
 def run_pipeline(alpha: float = config.ALPHA, num_random_portfolios: int = config.NUM_RANDOM_PORTFOLIOS):
     """주식 네트워크 기반 포트폴리오 백테스팅 파이프라인의 전체 실행을 조율
@@ -239,14 +285,24 @@ def run_pipeline(alpha: float = config.ALPHA, num_random_portfolios: int = confi
 
     # 2. 롤링 윈도우 방식으로 전체 기간 분석 실행
     all_quarters = pd.period_range(start=config.START_QUARTER, end=config.END_QUARTER, freq='Q')
+    network_stats_list = []
+    
     for i in range(len(all_quarters) - 1):
         network_quarter = all_quarters[i] # 네트워크 구축 분기
         test_quarter = all_quarters[i+1]    # 포트폴리오 성과 측정 분기
-        run_single_quarter_analysis(
+        stats = run_single_quarter_analysis(
             i, network_quarter, test_quarter,
             valid_tickers, master_price_data, master_returns_data, mkt_idx_all,
             alpha, num_random_portfolios
         )
+        if stats:
+            network_stats_list.append(stats)
+            
+    # 네트워크 통계 저장
+    if network_stats_list:
+        stats_df = pd.DataFrame(network_stats_list)
+        stats_df.to_csv('network_statistics.csv', index=False)
+        print("\nNetwork statistics saved to network_statistics.csv")
 
 if __name__ == '__main__':
     run_pipeline()

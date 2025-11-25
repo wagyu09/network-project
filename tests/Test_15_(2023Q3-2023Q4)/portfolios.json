@@ -1,24 +1,20 @@
 {
-    "min_centrality_portfolio": [
-        "DLTR",
+    "min_eigenvector_portfolio": [
         "KVUE",
+        "HPQ",
         "TSLA",
         "MRNA",
-        "VLTO",
-        "CRM",
-        "FDS",
-        "ACN",
-        "HPQ"
+        "DLTR",
+        "DIS",
+        "FDS"
     ],
-    "max_centrality_portfolio": [
-        "EA",
+    "max_eigenvector_portfolio": [
         "KVUE",
+        "BAC",
         "TSLA",
         "AEP",
-        "VLTO",
-        "MAS",
-        "VRSK",
-        "MPWR",
-        "MET"
+        "KLAC",
+        "PH",
+        "MMC"
     ]
 }

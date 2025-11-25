@@ -1,21 +1,21 @@
 {
-    "min_centrality_portfolio": [
+    "min_eigenvector_portfolio": [
         "CSCO",
-        "GPN",
-        "CPRT",
+        "UNH",
+        "FICO",
         "ISRG",
         "ACN",
         "DE",
-        "CMG",
+        "INTU",
         "CDNS",
         "BF-B"
     ],
-    "max_centrality_portfolio": [
+    "max_eigenvector_portfolio": [
         "WAT",
-        "UNH",
-        "SYF",
-        "PPL",
-        "OKE",
+        "SNA",
+        "RF",
+        "AEP",
+        "FANG",
         "DAY",
         "NWSA",
         "SNPS",

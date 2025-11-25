@@ -1,22 +1,16 @@
 {
-    "min_centrality_portfolio": [
-        "VLTO",
+    "min_eigenvector_portfolio": [
+        "NKE",
+        "BLK",
         "EL",
-        "NWSA",
         "FE",
-        "INTC",
-        "CEG",
-        "KVUE",
-        "NKE"
+        "BF-B"
     ],
-    "max_centrality_portfolio": [
-        "VLTO",
-        "AFL",
-        "ETR",
+    "max_eigenvector_portfolio": [
+        "NKE",
+        "POOL",
+        "PRU",
         "PH",
-        "ROL",
-        "CEG",
-        "KVUE",
-        "NKE"
+        "LNT"
     ]
 }

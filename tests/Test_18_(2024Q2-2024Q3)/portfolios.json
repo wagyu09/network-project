@@ -1,24 +1,24 @@
 {
-    "min_centrality_portfolio": [
+    "min_eigenvector_portfolio": [
         "TTWO",
-        "LYV",
+        "ZTS",
         "IP",
-        "AKAM",
-        "NWS",
+        "ULTA",
+        "AMZN",
         "LW",
         "SW",
         "ALGN",
         "AAPL"
     ],
-    "max_centrality_portfolio": [
+    "max_eigenvector_portfolio": [
         "TTWO",
-        "ADP",
+        "IEX",
         "L",
         "EVRG",
-        "ALLE",
+        "KEY",
         "DVN",
-        "RSG",
-        "APH",
+        "SBUX",
+        "KLAC",
         "AAPL"
     ]
 }

@@ -1,24 +1,20 @@
 {
-    "min_centrality_portfolio": [
-        "VLTO",
-        "SW",
-        "DPZ",
-        "CHTR",
+    "min_eigenvector_portfolio": [
+        "KEYS",
+        "TJX",
+        "EA",
+        "BAX",
         "DGX",
-        "KVUE",
-        "COST",
         "CME",
-        "TRMB"
+        "COST"
     ],
-    "max_centrality_portfolio": [
-        "VLTO",
-        "CBRE",
-        "XEL",
-        "PRU",
+    "max_eigenvector_portfolio": [
+        "AMT",
+        "DUK",
+        "KEY",
+        "EOG",
         "T",
-        "KVUE",
-        "GWW",
-        "QCOM",
-        "KMI"
+        "MCHP",
+        "CB"
     ]
 }

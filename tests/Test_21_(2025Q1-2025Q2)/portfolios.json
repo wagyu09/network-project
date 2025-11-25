@@ -1,18 +1,18 @@
 {
-    "min_centrality_portfolio": [
-        "EA",
+    "min_eigenvector_portfolio": [
+        "EW",
         "EIX",
-        "FICO",
+        "META",
         "MRNA",
-        "ALGN",
+        "ADBE",
         "TSLA"
     ],
-    "max_centrality_portfolio": [
-        "NDSN",
-        "SO",
-        "PEG",
+    "max_eigenvector_portfolio": [
+        "ITW",
+        "WEC",
+        "ETN",
         "MRNA",
-        "MET",
+        "HBAN",
         "TSLA"
     ]
 }

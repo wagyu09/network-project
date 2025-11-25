@@ -1,20 +1,18 @@
 {
-    "min_centrality_portfolio": [
-        "VLTO",
-        "CEG",
-        "BIIB",
-        "DVA",
-        "DG",
-        "FIS",
+    "min_eigenvector_portfolio": [
+        "COST",
+        "REGN",
+        "PYPL",
+        "DAY",
+        "CRM",
         "SW"
     ],
-    "max_centrality_portfolio": [
-        "VLTO",
+    "max_eigenvector_portfolio": [
+        "AMAT",
         "RF",
-        "DUK",
+        "LNT",
         "MRK",
-        "TXT",
-        "MCHP",
+        "DOV",
         "SW"
     ]
 }

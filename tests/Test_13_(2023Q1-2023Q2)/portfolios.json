@@ -1,22 +1,18 @@
 {
-    "min_centrality_portfolio": [
+    "min_eigenvector_portfolio": [
+        "CBOE",
+        "UHS",
         "INCY",
         "GEN",
-        "ISRG",
-        "KVUE",
-        "DXCM",
-        "LULU",
-        "VLTO",
-        "AAPL"
+        "PYPL",
+        "LULU"
     ],
-    "max_centrality_portfolio": [
-        "GL",
-        "TMO",
-        "SWK",
-        "KVUE",
-        "PPL",
-        "LULU",
-        "VLTO",
-        "SLB"
+    "max_eigenvector_portfolio": [
+        "SLB",
+        "TER",
+        "PRU",
+        "WAT",
+        "XEL",
+        "LULU"
     ]
 }
