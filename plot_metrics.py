@@ -29,7 +29,7 @@ def plot_network_metrics(input_filename='network_metrics.csv', output_filename='
     ax1.set_xlabel('Quarter', fontsize=14)
     ax1.set_ylabel('Modularity / Density', color=color1, fontsize=14)
     line1, = ax1.plot(quarters, df['Modularity'], color=color1, marker='o', linestyle='-', label='Modularity')
-    line2, = ax1.plot(quarters, df['network_density'], color='tab:cyan', marker='x', linestyle='--', label='Network Density')
+    line2, = ax1.plot(quarters, df['Network_Density'], color='tab:cyan', marker='x', linestyle='--', label='Network Density')
     ax1.tick_params(axis='y', labelcolor=color1)
     ax1.tick_params(axis='x', rotation=45) # x축 라벨 회전
 
@@ -37,7 +37,7 @@ def plot_network_metrics(input_filename='network_metrics.csv', output_filename='
     ax2 = ax1.twinx()
     color2 = 'tab:red'
     ax2.set_ylabel('Average Degree', color=color2, fontsize=14)
-    line3, = ax2.plot(quarters, df['avg_degree'], color=color2, marker='s', linestyle='-', label='Average Degree')
+    line3, = ax2.plot(quarters, df['Avg_Degree'], color=color2, marker='s', linestyle='-', label='Average Degree')
     ax2.tick_params(axis='y', labelcolor=color2)
 
     # 그래프 제목 및 범례

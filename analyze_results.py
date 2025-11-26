@@ -16,9 +16,9 @@ def analyze_results():
     
     # 1. 네트워크 통계 데이터 로드 및 전처리
     try:
-        net_stats = pd.read_csv('network_statistics.csv')
+        net_stats = pd.read_csv('network_metrics.csv')
         # 지표 계산 (이미 계산되어 있을 수 있지만 안전하게 다시 계산하거나, 파일에 있는 값 그대로 사용)
-        # network_statistics.csv에는 Density, Avg_Degree가 없을 수도 있음 (run.py에서는 계산 안 함)
+
         # run.py only saves: Quarter, Num_Nodes, Num_Edges, Num_Communities, Modularity
         # So we MUST calculate Density and Avg_Degree here.
         
