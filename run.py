@@ -22,7 +22,8 @@ from pipeline.network_analysis import (
     calculate_centrality,
     create_network_from_edges,
     detect_communities,
-    visualize_network
+    visualize_network,
+    visualize_degree_distribution
 )
 
 def load_and_prepare_data() -> tuple[list, pd.DataFrame, pd.DataFrame, pd.DataFrame]:
@@ -259,14 +260,28 @@ def run_single_quarter_analysis(i: int, network_quarter: pd.Period, test_quarter
     print("  Generating and saving network visualization...")
     visualize_network(G_final_visual, partition, output_filename=viz_path)
 
+    # 5-2. 디그리 분포 시각화 생성 및 저장
+    degree_dist_filename = f"degree_distribution_{network_quarter}-{test_quarter}.png"
+    degree_dist_path = os.path.join('degree_distributions', degree_dist_filename)
+    visualize_degree_distribution(G_final_visual, output_filename=degree_dist_path)
+
     print(f"--- Completed: {folder_name} ---")
     
+    # 최종 통계량 계산
+    num_nodes = G_final_visual.number_of_nodes()
+    num_edges = G_final_visual.number_of_edges()
+    
+    avg_degree = 2 * num_edges / num_nodes if num_nodes > 0 else 0
+    density = 2 * num_edges / (num_nodes * (num_nodes - 1)) if num_nodes > 1 else 0
+
     return {
         'Quarter': str(network_quarter),
-        'Num_Nodes': G_community.number_of_nodes() if 'G_community' in locals() else 0,
-        'Num_Edges': len(p_edges),
+        'Num_Nodes': num_nodes,
+        'Num_Edges': num_edges,
         'Num_Communities': len(set(partition.values())) if partition else 0,
-        'Modularity': modularity_score
+        'Modularity': modularity_score,
+        'avg_degree': avg_degree,
+        'network_density': density
     }
 
 def run_pipeline(alpha: float = config.ALPHA, num_random_portfolios: int = config.NUM_RANDOM_PORTFOLIOS):
@@ -277,6 +292,9 @@ def run_pipeline(alpha: float = config.ALPHA, num_random_portfolios: int = confi
         num_random_portfolios (int): 생성할 무작위 포트폴리오 개수 (config 파일에서 로드)
     """
     random.seed(42) # 결과 재현성을 위한 시드 고정
+    
+    # 그래프 이미지를 저장할 폴더 생성
+    os.makedirs('degree_distributions', exist_ok=True)
     
     # 1. 전체 분석 기간 데이터 미리 로드
     valid_tickers, master_price_data, master_returns_data, mkt_idx_all = load_and_prepare_data()
@@ -301,8 +319,8 @@ def run_pipeline(alpha: float = config.ALPHA, num_random_portfolios: int = confi
     # 네트워크 통계 저장
     if network_stats_list:
         stats_df = pd.DataFrame(network_stats_list)
-        stats_df.to_csv('network_statistics.csv', index=False)
-        print("\nNetwork statistics saved to network_statistics.csv")
+        stats_df.to_csv('network_metrics.csv', index=False)
+        print("\nNetwork metrics saved to network_metrics.csv")
 
 if __name__ == '__main__':
     run_pipeline()

@@ -144,3 +144,36 @@ def visualize_network(G: nx.Graph, partition: dict, output_filename: str = 'netw
     plt.savefig(output_filename, dpi=300, bbox_inches='tight')
     plt.close() # GUI 창이 뜨지 않도록 닫아줌
     print(f"네트워크 시각화가 '{output_filename}' 파일로 저장되었습니다")
+
+def visualize_degree_distribution(G: nx.Graph, output_filename: str):
+    """네트워크의 디그리 분포를 시각화하고 파일로 저장
+
+    Args:
+        G (nx.Graph): NetworkX 그래프 객체
+        output_filename (str): 저장할 이미지 파일 이름
+    """
+    if not G.nodes():
+        print("디그리 분포를 계산할 노드가 없음")
+        return
+
+    degrees = [G.degree(n) for n in G.nodes()]
+    
+    plt.figure(figsize=(12, 8))
+    plt.hist(degrees, bins='auto', color='skyblue', edgecolor='black', alpha=0.7)
+    
+    avg_degree = np.mean(degrees)
+    plt.axvline(avg_degree, color='red', linestyle='dashed', linewidth=2)
+    
+    plt.title(f'Degree Distribution (Avg Degree: {avg_degree:.2f})', fontsize=18)
+    plt.xlabel('Degree', fontsize=14)
+    plt.ylabel('Number of Nodes', fontsize=14)
+    plt.grid(axis='y', linestyle='--', alpha=0.7)
+    
+    # y축을 로그 스케일로 표시하여 멱함수 분포 확인
+    plt.yscale('log')
+    
+    plt.minorticks_off()
+    
+    plt.savefig(output_filename, dpi=150, bbox_inches='tight')
+    plt.close()
+    print(f"디그리 분포 그래프가 '{output_filename}' 파일로 저장되었습니다")
