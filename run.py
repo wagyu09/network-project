@@ -11,6 +11,8 @@ import community as community_louvain
 import shutil
 import matplotlib.pyplot as plt
 
+import analyze_results
+import plot_metrics
 import config
 from pipeline.data_loader import fetch_sp500_tickers, load_raw_stock_data, load_market_data
 from pipeline.corr_calculator import calculate_residual_correlation
@@ -235,7 +237,12 @@ def main():
         
     if metrics_list:
         pd.DataFrame(metrics_list).to_csv(os.path.join(config.SUMMARY_DIR, 'network_metrics.csv'), index=False)
-        print("\nPipeline Completed Successfully.")
+        
+    print("\n--- Running Post-Analysis & Visualization ---")
+    analyze_results.analyze_backtest_results()
+    plot_metrics.plot_network_metrics()
+    
+    print("\nPipeline Completed Successfully.")
 
 if __name__ == '__main__':
     main()
