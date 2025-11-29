@@ -1,0 +1,49 @@
+{
+    "min_eigenvector": [
+        "NWS",
+        "DPZ",
+        "RL",
+        "META",
+        "WFC",
+        "CARR",
+        "ABBV",
+        "AAPL",
+        "CSGP",
+        "GEN",
+        "IBM",
+        "LIN"
+    ],
+    "max_eigenvector": [
+        "ATO",
+        "OKE",
+        "LKQ",
+        "AMAT",
+        "AMP",
+        "GNRC",
+        "ABBV",
+        "AAPL",
+        "CSGP",
+        "GEN",
+        "IBM",
+        "LIN"
+    ],
+    "weighted_sector": [
+        "APH",
+        "CLX",
+        "DG",
+        "ES",
+        "HSY",
+        "INTC",
+        "MRNA",
+        "NTAP",
+        "PFE",
+        "PPL",
+        "PTC",
+        "RMD",
+        "TEL",
+        "TGT",
+        "VRTX",
+        "WDC",
+        "ZBH"
+    ]
+}

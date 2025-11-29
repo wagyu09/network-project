@@ -1,0 +1,471 @@
+Ticker,Cluster_ID,Sector
+A,0,Health Care
+ACN,0,Information Technology
+ADSK,0,Information Technology
+ALB,0,Materials
+ALLE,0,Industrials
+AMCR,0,Materials
+AME,0,Industrials
+AMGN,0,Health Care
+AOS,0,Industrials
+APTV,0,Consumer Discretionary
+ARE,0,Real Estate
+AVY,0,Materials
+BA,0,Industrials
+BF-B,0,Consumer Staples
+BLDR,0,Industrials
+BLK,0,Financials
+BXP,0,Real Estate
+CARR,0,Industrials
+CAT,0,Industrials
+CBRE,0,Real Estate
+CDW,0,Information Technology
+CMCSA,0,Communication Services
+CMI,0,Industrials
+CPRT,0,Industrials
+CRL,0,Health Care
+CSGP,0,Real Estate
+CTAS,0,Industrials
+CTSH,0,Information Technology
+CTVA,0,Materials
+DAY,0,Industrials
+DD,0,Materials
+DE,0,Industrials
+DHI,0,Consumer Discretionary
+DHR,0,Health Care
+DIS,0,Communication Services
+DOV,0,Industrials
+DOW,0,Materials
+DPZ,0,Consumer Discretionary
+EA,0,Communication Services
+EBAY,0,Consumer Discretionary
+EFX,0,Industrials
+EL,0,Consumer Staples
+EMR,0,Industrials
+EPAM,0,Information Technology
+FAST,0,Industrials
+FCX,0,Materials
+FDX,0,Industrials
+FFIV,0,Information Technology
+FTV,0,Industrials
+GEN,0,Information Technology
+GILD,0,Health Care
+GNRC,0,Industrials
+GPC,0,Consumer Discretionary
+GWW,0,Industrials
+HAS,0,Consumer Discretionary
+HD,0,Consumer Discretionary
+HST,0,Real Estate
+HUBB,0,Industrials
+HWM,0,Industrials
+IDXX,0,Health Care
+IEX,0,Industrials
+IFF,0,Materials
+IP,0,Materials
+IQV,0,Health Care
+IR,0,Industrials
+IT,0,Information Technology
+ITW,0,Industrials
+J,0,Industrials
+JBHT,0,Industrials
+JCI,0,Industrials
+LEN,0,Consumer Discretionary
+LOW,0,Consumer Discretionary
+LVS,0,Consumer Discretionary
+LW,0,Consumer Staples
+LYB,0,Materials
+MAS,0,Industrials
+MGM,0,Consumer Discretionary
+MHK,0,Consumer Discretionary
+MLM,0,Materials
+MOS,0,Materials
+MRNA,0,Health Care
+MTCH,0,Communication Services
+MTD,0,Health Care
+NDSN,0,Industrials
+NUE,0,Materials
+NVR,0,Consumer Discretionary
+ODFL,0,Industrials
+OMC,0,Communication Services
+OTIS,0,Industrials
+PAYC,0,Industrials
+PH,0,Industrials
+PHM,0,Consumer Discretionary
+PKG,0,Materials
+PNR,0,Industrials
+POOL,0,Consumer Discretionary
+PPG,0,Materials
+PTC,0,Information Technology
+PYPL,0,Financials
+REGN,0,Health Care
+RL,0,Consumer Discretionary
+ROK,0,Industrials
+RVTY,0,Health Care
+SHW,0,Materials
+SNA,0,Industrials
+SWK,0,Industrials
+TDY,0,Information Technology
+TECH,0,Health Care
+TMO,0,Health Care
+TPR,0,Consumer Discretionary
+TRMB,0,Information Technology
+TSCO,0,Consumer Discretionary
+TSN,0,Consumer Staples
+TXT,0,Industrials
+URI,0,Industrials
+VMC,0,Materials
+WAB,0,Industrials
+WAT,0,Health Care
+WY,0,Real Estate
+WYNN,0,Consumer Discretionary
+XYL,0,Industrials
+YUM,0,Consumer Discretionary
+ZBRA,0,Information Technology
+ADM,1,Consumer Staples
+AIG,1,Financials
+AMP,1,Financials
+APA,1,Energy
+AXON,1,Industrials
+AXP,1,Financials
+BAC,1,Financials
+BEN,1,Financials
+BG,1,Consumer Staples
+BIIB,1,Health Care
+BK,1,Financials
+BKR,1,Energy
+BRK-B,1,Financials
+C,1,Financials
+CF,1,Materials
+CFG,1,Financials
+CI,1,Health Care
+COF,1,Financials
+COP,1,Energy
+CPAY,1,Financials
+CSX,1,Industrials
+CTRA,1,Energy
+CVX,1,Energy
+DAL,1,Industrials
+DVA,1,Health Care
+DVN,1,Energy
+DXCM,1,Health Care
+EG,1,Financials
+EOG,1,Energy
+EQT,1,Energy
+EXPD,1,Industrials
+FANG,1,Energy
+FITB,1,Financials
+FTNT,1,Information Technology
+GL,1,Financials
+GPN,1,Financials
+GS,1,Financials
+HAL,1,Energy
+HBAN,1,Financials
+HII,1,Industrials
+HSIC,1,Health Care
+INCY,1,Health Care
+IVZ,1,Financials
+JPM,1,Financials
+KEY,1,Financials
+KMI,1,Energy
+L,1,Financials
+LUV,1,Industrials
+MET,1,Financials
+MPC,1,Energy
+MS,1,Financials
+MTB,1,Financials
+NTRS,1,Financials
+OKE,1,Energy
+OXY,1,Energy
+PFG,1,Financials
+PNC,1,Financials
+PRU,1,Financials
+PSX,1,Energy
+RF,1,Financials
+RJF,1,Financials
+RMD,1,Health Care
+SCHW,1,Financials
+SLB,1,Energy
+STT,1,Financials
+SYF,1,Financials
+TFC,1,Financials
+TPL,1,Energy
+TRGP,1,Energy
+TROW,1,Financials
+USB,1,Financials
+VLO,1,Energy
+VTRS,1,Health Care
+WFC,1,Financials
+WMB,1,Energy
+XOM,1,Energy
+XYZ,1,Financials
+ABBV,2,Health Care
+ABT,2,Health Care
+ACGL,2,Financials
+ADP,2,Industrials
+AEE,2,Utilities
+AEP,2,Utilities
+AES,2,Utilities
+AFL,2,Financials
+AJG,2,Financials
+ALL,2,Financials
+AMT,2,Real Estate
+APD,2,Materials
+ATO,2,Utilities
+AVB,2,Real Estate
+AWK,2,Utilities
+BALL,2,Materials
+BBY,2,Consumer Discretionary
+BDX,2,Health Care
+BSX,2,Health Care
+CAG,2,Consumer Staples
+CAH,2,Health Care
+CBOE,2,Financials
+CCI,2,Real Estate
+CHD,2,Consumer Staples
+CHRW,2,Industrials
+CINF,2,Financials
+CL,2,Consumer Staples
+CLX,2,Consumer Staples
+CMS,2,Utilities
+CNP,2,Utilities
+COO,2,Health Care
+COR,2,Health Care
+COST,2,Consumer Staples
+CPB,2,Consumer Staples
+CPT,2,Real Estate
+D,2,Utilities
+DGX,2,Health Care
+DLR,2,Real Estate
+DOC,2,Real Estate
+DTE,2,Utilities
+DUK,2,Utilities
+ECL,2,Materials
+ED,2,Utilities
+EIX,2,Utilities
+EQIX,2,Real Estate
+EQR,2,Real Estate
+ES,2,Utilities
+ESS,2,Real Estate
+ETR,2,Utilities
+EVRG,2,Utilities
+EXC,2,Utilities
+EXR,2,Real Estate
+FE,2,Utilities
+FICO,2,Information Technology
+FRT,2,Real Estate
+GIS,2,Consumer Staples
+GLW,2,Information Technology
+HOLX,2,Health Care
+HRL,2,Consumer Staples
+HSY,2,Consumer Staples
+ICE,2,Financials
+IRM,2,Real Estate
+ISRG,2,Health Care
+JNJ,2,Health Care
+KDP,2,Consumer Staples
+KHC,2,Consumer Staples
+KIM,2,Real Estate
+KMB,2,Consumer Staples
+KO,2,Consumer Staples
+KR,2,Consumer Staples
+LDOS,2,Industrials
+LH,2,Health Care
+LIN,2,Materials
+LLY,2,Health Care
+LNT,2,Utilities
+MA,2,Financials
+MAA,2,Real Estate
+MCD,2,Consumer Discretionary
+MCO,2,Financials
+MDLZ,2,Consumer Staples
+MDT,2,Health Care
+MKC,2,Consumer Staples
+MMC,2,Financials
+MO,2,Consumer Staples
+MRK,2,Health Care
+MSI,2,Information Technology
+NEE,2,Utilities
+NI,2,Utilities
+O,2,Real Estate
+ORCL,2,Information Technology
+PAYX,2,Industrials
+PCG,2,Utilities
+PEG,2,Utilities
+PEP,2,Consumer Staples
+PFE,2,Health Care
+PG,2,Consumer Staples
+PLD,2,Real Estate
+PM,2,Consumer Staples
+PNW,2,Utilities
+PPL,2,Utilities
+PSA,2,Real Estate
+REG,2,Real Estate
+RSG,2,Industrials
+SBAC,2,Real Estate
+SJM,2,Consumer Staples
+SO,2,Utilities
+SPGI,2,Financials
+SRE,2,Utilities
+STE,2,Health Care
+STZ,2,Consumer Staples
+SYK,2,Health Care
+SYY,2,Consumer Staples
+T,2,Communication Services
+TMUS,2,Communication Services
+UDR,2,Real Estate
+UNH,2,Health Care
+V,2,Financials
+VICI,2,Real Estate
+VRSN,2,Information Technology
+VRTX,2,Health Care
+VTR,2,Real Estate
+VZ,2,Communication Services
+WEC,2,Utilities
+WELL,2,Real Estate
+XEL,2,Utilities
+ZBH,2,Health Care
+TSLA,3,Consumer Discretionary
+BAX,4,Health Care
+BR,4,Industrials
+CME,4,Financials
+CMG,4,Consumer Discretionary
+FIS,4,Financials
+FOX,4,Communication Services
+FOXA,4,Communication Services
+JKHY,4,Financials
+KVUE,4,Consumer Staples
+NWS,4,Communication Services
+NWSA,4,Communication Services
+SPG,4,Real Estate
+TAP,4,Consumer Staples
+UBER,4,Industrials
+ZTS,4,Health Care
+ADBE,5,Information Technology
+AIZ,5,Financials
+AON,5,Financials
+AZO,5,Consumer Discretionary
+BMY,5,Health Care
+BRO,5,Financials
+CB,5,Financials
+CHTR,5,Communication Services
+CNC,5,Health Care
+CVS,5,Health Care
+DG,5,Consumer Staples
+DLTR,5,Consumer Staples
+DRI,5,Consumer Discretionary
+ELV,5,Health Care
+FDS,5,Financials
+GD,5,Industrials
+GRMN,5,Consumer Discretionary
+HCA,5,Health Care
+HIG,5,Financials
+HUM,5,Health Care
+IBM,5,Information Technology
+INTU,5,Information Technology
+LHX,5,Industrials
+LMT,5,Industrials
+MMM,5,Industrials
+MOH,5,Health Care
+MSCI,5,Financials
+NDAQ,5,Financials
+NOC,5,Industrials
+NOW,5,Information Technology
+NSC,5,Industrials
+NTAP,5,Information Technology
+ORLY,5,Consumer Discretionary
+PGR,5,Financials
+ROP,5,Information Technology
+RTX,5,Industrials
+TRV,5,Financials
+TYL,5,Information Technology
+UHS,5,Health Care
+UNP,5,Industrials
+VLTO,5,Industrials
+VRSK,5,Industrials
+WRB,5,Financials
+WTW,5,Financials
+ADI,6,Information Technology
+AKAM,6,Information Technology
+ALGN,6,Health Care
+AMAT,6,Information Technology
+AMD,6,Information Technology
+AMZN,6,Consumer Discretionary
+ANET,6,Information Technology
+APH,6,Information Technology
+AVGO,6,Information Technology
+BKNG,6,Consumer Discretionary
+CCL,6,Consumer Discretionary
+CDNS,6,Information Technology
+CEG,6,Utilities
+CSCO,6,Information Technology
+ETN,6,Industrials
+EW,6,Health Care
+EXPE,6,Consumer Discretionary
+F,6,Consumer Discretionary
+FISV,6,Financials
+GE,6,Industrials
+GM,6,Consumer Discretionary
+HLT,6,Consumer Discretionary
+HON,6,Industrials
+HPE,6,Information Technology
+HPQ,6,Information Technology
+INTC,6,Information Technology
+INVH,6,Real Estate
+JBL,6,Information Technology
+KEYS,6,Information Technology
+KLAC,6,Information Technology
+LKQ,6,Consumer Discretionary
+LRCX,6,Information Technology
+LULU,6,Consumer Discretionary
+MAR,6,Consumer Discretionary
+MCHP,6,Information Technology
+MCK,6,Health Care
+MNST,6,Consumer Staples
+MPWR,6,Information Technology
+MU,6,Information Technology
+NCLH,6,Consumer Discretionary
+NEM,6,Materials
+NRG,6,Utilities
+NVDA,6,Information Technology
+NXPI,6,Information Technology
+ON,6,Information Technology
+PCAR,6,Industrials
+PSKY,6,Communication Services
+PWR,6,Industrials
+QCOM,6,Information Technology
+RCL,6,Consumer Discretionary
+ROL,6,Industrials
+ROST,6,Consumer Discretionary
+SNPS,6,Information Technology
+STX,6,Information Technology
+SW,6,Materials
+SWKS,6,Information Technology
+TDG,6,Industrials
+TEL,6,Information Technology
+TER,6,Information Technology
+TGT,6,Consumer Staples
+TJX,6,Consumer Discretionary
+TT,6,Industrials
+TTWO,6,Communication Services
+TXN,6,Information Technology
+UAL,6,Industrials
+ULTA,6,Consumer Discretionary
+UPS,6,Industrials
+WBD,6,Communication Services
+WDC,6,Information Technology
+WM,6,Industrials
+WMT,6,Consumer Staples
+WST,6,Health Care
+GOOG,7,Communication Services
+GOOGL,7,Communication Services
+AAPL,8,Information Technology
+PODD,9,Health Care
+K,10,Consumer Staples
+LYV,11,Communication Services
+META,12,Communication Services
+MSFT,13,Information Technology
+NFLX,14,Communication Services
+NKE,15,Consumer Discretionary
+PANW,16,Information Technology
+CRM,17,Information Technology
+SBUX,18,Consumer Discretionary
